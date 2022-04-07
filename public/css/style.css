@@ -1,0 +1,17 @@
+:root {
+    --darktext: #2C2B32;
+    --navbarbackground: #463F3A;
+    --mainbackground: #8A817C;
+    --cardbackground: #BCB8B1;
+    --lighttext: #F4F3EE;
+}
+
+.navbar {
+    color: var(--lighttext);
+    background-color: var(--navbarbackground);
+}
+
+.navbar-item {
+    color: var(--lighttext);
+    background-color: var(--navbarbackground);
+}
