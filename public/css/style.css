@@ -1,17 +1,45 @@
 :root {
-    --darktext: #2C2B32;
-    --navbarbackground: #463F3A;
-    --mainbackground: #8A817C;
-    --cardbackground: #BCB8B1;
-    --lighttext: #F4F3EE;
+  --darktext: #2c2b32;
+  --navbarbackground: #463f3a;
+  --mainbackground: #8a817c;
+  --cardbackground: #bcb8b1;
+  --lighttext: #f4f3ee;
 }
 
 .navbar {
-    color: var(--lighttext);
-    background-color: var(--navbarbackground);
+  color: var(--lighttext);
+  background-color: var(--navbarbackground);
 }
 
 .navbar-item {
-    color: var(--lighttext);
-    background-color: var(--navbarbackground);
+  color: var(--lighttext);
+  background-color: var(--navbarbackground);
 }
+
+.hero {
+  background-color: #463f3a;
+  background-image: url('librarybackground.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #999;
+}
+
+form.box {
+  background-color: #bcb8b1;
+  opacity: 0.8;
+  padding: 10rem;
+  margin: 15rem;
+}
+
+.custom-select {
+  min-width: 100%;
+}
+
+.field.has-text-centered {
+  padding-top: 2rem;
+}
+
+/* Photo by <a href="https://unsplash.com/@itfeelslikefilm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">🇸🇮 Janko Ferlič</a> on <a href="https://unsplash.com/s/photos/library?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+     */
