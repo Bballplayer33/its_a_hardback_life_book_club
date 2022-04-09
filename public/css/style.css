@@ -42,5 +42,18 @@ form.box {
   padding-top: 2rem;
 }
 
+.panel-heading {
+  color: var(--lighttext);
+  background-color: var(--navbarbackground);
+}
+
+#custom-search {
+  text-align: center;
+}
+
+#search-page-box {
+  min-width: 100vw;
+  min-height: 100hw;
+}
 /* Photo by <a href="https://unsplash.com/@itfeelslikefilm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">🇸🇮 Janko Ferlič</a> on <a href="https://unsplash.com/s/photos/library?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
      */
