@@ -9,6 +9,7 @@ router.use('/posts', reviewRoutes);
 module.exports = router;
 
 // Function for getting books from API
+//pulling from server
 
 function getBooks() {
     document.getElementById('output').innerHTML='';
