@@ -19,7 +19,7 @@
 .hero {
   /* min-height: 100vh; */
   background-color: #463f3a;
-  background-image: url('librarybackground.png');
+  background-image: url('../assets/librarybackground.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
