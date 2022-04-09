@@ -1,0 +1,78 @@
+     <div class="container box" id="search-page-box">
+        <div class="columns is-flex is-justify-content-space-evenly">
+            <div class="column is-4">
+                <div class="panel" id="custom-search">
+                    <p class="panel-heading">
+                        Search
+                      </p>
+                    <form>
+                    <div class="has-text-centered box">
+                        <div class='field has-text-centered'>
+                            <label class='label'>Search by: </label>
+                            <div class='control is-expanded"'>
+                                <div class='select custom-select'>
+                                    <select class="custom-select">
+                                        <option>Subject</option>
+                                        <option>Author</option>
+                                        <option>Title</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='field has-text-centered'>
+                            <div class='control'>
+                                <input id="input" class='input' type='text' placeholder='Search here' />
+                            </div>
+                        </div>
+                        <button onclick="getBooks()" class='button mt-6'>Search</button>
+                </form>
+                <div id="output"></div>
+                    <a class="panel-block is-active">
+                      <span class="panel-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                      </span>
+                      Last Search Goes Here
+                    </a>
+                    <a class="panel-block">
+                      <span class="panel-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                      </span>
+                      2nd to Last Search Goes Here
+                    </a>
+                    <a class="panel-block">
+                      <span class="panel-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                      </span>
+                        3rd to Last Search
+                    </a>
+                  </div>
+            </div>
+            </div>
+
+            <div class="column is-7">
+                <div class="panel has-text-centered">
+                    <p class="panel-heading">
+                      Results
+                    </p>
+                    <a class="panel-block is-active">
+                      <span class="panel-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                      </span>
+                        1st Search Result
+                    </a>
+                    <a class="panel-block">
+                      <span class="panel-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                      </span>
+                      2nd Search Result
+                    </a>
+                    <a class="panel-block">
+                      <span class="panel-icon">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                      </span>
+                      3rd Search Result
+                    </a>
+                </div>
+            </div>
+        </div>
+    
