@@ -2,14 +2,14 @@
 //pulling from server
 
 function getBooks() {
-  const results = (document.getElementById('output').innerHTML = '');
+  document.getElementById('output').innerHTML = '';
   fetch(
     'http://openlibrary.org/search.json?q=' +
       document.getElementById('input').value
   )
     .then((a) => a.json())
     .then((reponse) => {
-      for (var i = 0; i.length < 11; i++) {
+      for (var i = 0; i < 10; i++) {
         document.getElementById('output').innerHTML +=
           '<h2>' +
           response.docs[i].title +
