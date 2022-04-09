@@ -1,12 +1,10 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 const reviewRoutes = require('./reviewRoutes');
-const { response } = require('express');
+const bookRoutes = require('./bookRoutes');
 
 router.use('/users', userRoutes);
-router.use('/posts', reviewRoutes);
-
-// Function for getting books from API
-//pulling from server
+router.use('/reviews', reviewRoutes);
+router.use('/books', bookRoutes);
 
 module.exports = router;
