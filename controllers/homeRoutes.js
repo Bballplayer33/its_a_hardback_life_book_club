@@ -10,6 +10,16 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+//Search
+router.get('/search', async (req, res) => {
+  try {
+    res.render('search');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //get login page
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
