@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Book } = require('../models');
+const { User, Book, Review } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Homepage
@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-//Search
+//Search; search page will render results from third party API
 router.get('/search', async (req, res) => {
   try {
     res.render('search');
@@ -30,12 +30,13 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
+// must be logged in to view profile
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
+      // will need book data displayed on profile page
       include: [{ model: Book }],
     });
 
