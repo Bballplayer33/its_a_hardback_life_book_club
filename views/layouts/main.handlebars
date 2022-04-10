@@ -33,24 +33,30 @@
       </div>
       <div class='navbar-menu'>
         <div class='navbar-start'>
-          <a class='navbar-item'>
+          <a href='/' class='navbar-item'>
             Main
           </a>
-          <a class='navbar-item'>
+          <a href='/profile' class='navbar-item'>
             Profile
           </a>
-          <a class='navbar-item'>
+          <a href='/forum' class='navbar-item'>
             Forum
           </a>
         </div>
       </div>
       <div class='navbar-end'>
-        <a class='navbar-item'>Login | Signup</a>
+        <div class='navbar-item'>
+          {{#if logged_in}}
+            <a id='logout' class='navbar-item'>
+              <strong>Log Out</strong>
+            </a>
+          {{else}}
+            <a href='/login' class='navbar-item'>Login | Signup</a>
+          {{/if}}
+        </div>
       </div>
+
     </nav>
-
-
-
 
     <main>
 <<<<<<< HEAD
@@ -62,9 +68,11 @@
       {{{body}}}
 >>>>>>> af4e2b41330df4d497a836417840fb2b6a593d34
     </main>
-
-
-
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src='/js/logout.js'></script>
+    {{/if}}
+    <script src='/js/navburger.js'></script>
   </body>
 
 </html>
