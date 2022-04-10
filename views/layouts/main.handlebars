@@ -4,6 +4,12 @@
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>It's A Hardback Life Book Club</title>
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Italiana&display=swap'
+      rel='stylesheet'
+    />
     <link
       rel='stylesheet'
       href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'
@@ -13,7 +19,11 @@
   </head>
 
   <body>
-    <nav class='navbar' role='navigation' aria-label='main navigation'>
+    <nav
+      class='navbar is-size-4'
+      role='navigation'
+      aria-label='main navigation'
+    >
       <div class='navbar-brand'>
         <span class='navbar-item'>
           It's A Hardback Life
@@ -21,7 +31,7 @@
         </span>
         <a
           role='button'
-          class='navbar-burger'
+          class='navbar-burger has-text-white is-size-4'
           aria-label='menu'
           aria-expanded='false'
           data-target='navbarBasicExample'
@@ -31,7 +41,7 @@
           <span aria-hidden='true'></span>
         </a>
       </div>
-      <div class='navbar-menu'>
+      <div id='navbarBasicExample' class='navbar-menu'>
         <div class='navbar-start'>
           <a href='/' class='navbar-item'>
             Main
@@ -45,15 +55,17 @@
         </div>
       </div>
       <div class='navbar-end'>
-        <div class='navbar-item'>
-          {{#if logged_in}}
+        {{#if logged_in}}
+          <div class='navbar-item'>
             <a id='logout' class='navbar-item'>
               <strong>Log Out</strong>
-            </a>
-          {{else}}
+            </a></div>
+        {{else}}
+          <div class='navbar-item'>
             <a href='/login' class='navbar-item'>Login | Signup</a>
-          {{/if}}
-        </div>
+          </div>
+        {{/if}}
+
       </div>
 
     </nav>

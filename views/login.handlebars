@@ -1,42 +1,90 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
+<div class='columns is-flex is-desktop is-vcentered form-height'>
+  <form class='column is-half is-offset-one-quarter box login-form p-4'>
+    <div class='field'>
+      <p class='control has-icons-left has-icons-right'>
+        <input
+          class='input'
+          id='email-login'
+          type='email'
+          placeholder='Email'
+        />
+        <span class='icon is-small is-left'>
+          <i class='fas fa-envelope'></i>
+        </span>
+        <span class='icon is-small is-right'>
+          <i class='fas fa-check'></i>
+        </span>
+      </p>
+    </div>
+    <div class='field'>
+      <p class='control has-icons-left'>
+        <input
+          class='input'
+          id='password-login'
+          type='password'
+          placeholder='Password'
+        />
+        <span class='icon is-small is-left'>
+          <i class='fas fa-lock'></i>
+        </span>
+      </p>
+    </div>
+    <div class='field'>
+      <p class='control'>
+        <button class='button is-success'>
+          Login
+        </button>
+      </p>
+    </div>
+  </form>
+</div>
+<div class='columns is-flex is-desktop is-vcentered form-height'>
+  <form class='column is-half is-offset-one-quarter box signup-form p-4'>
+    <div class='field'>
+      <p class='control has-icons-left'>
+        <input class='input' type='name' id='name-signup' placeholder='Name' />
+        <span class='icon is-small is-left'>
+          <i class='fas fa-user'></i>
+        </span>
+      </p>
+    </div>
+    <div class='field'>
+      <p class='control has-icons-left has-icons-right'>
+        <input
+          class='input'
+          id='email-signup'
+          type='email'
+          placeholder='Email'
+        />
+        <span class='icon is-small is-left'>
+          <i class='fas fa-envelope'></i>
+        </span>
+        <span class='icon is-small is-right'>
+          <i class='fas fa-check'></i>
+        </span>
+      </p>
+    </div>
+    <div class='field'>
+      <p class='control has-icons-left'>
+        <input
+          class='input'
+          id='password-signup'
+          type='password'
+          placeholder='Password'
+        />
+        <span class='icon is-small is-left'>
+          <i class='fas fa-lock'></i>
+        </span>
+      </p>
+    </div>
+    <div class='field'>
+      <p class='control'>
+        <button class='button is-success'>
+          Sign Up
+        </button>
+      </p>
+    </div>
+  </form>
 </div>
 
-<script src="./js/login.js"></script>
+<script src='./js/login.js'></script>
