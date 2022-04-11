@@ -1,0 +1,50 @@
+  <div class="container" class="chat-body" id="app">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            Group Chats <span class="badge">{{ members.count }}</span>
+          </div>
+          <div class="panel-body">
+            <div v-if="joined">
+              <em><span v-text="status"></span></em>
+              <ul class="chat">
+                <li class="left clearfix" v-for="message in messages">
+                  <div class="chat-body clearfix">
+                    <div class="header">
+                      <strong class="primary-font">
+                        {{ message.username }}
+                      </strong>
+                    </div>
+                    <p>
+                      {{ message.message }}
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <div class="panel-footer">
+                <div class="input-group">
+                  <input id="btn-input" type="text" name="message" class="form-control input-sm"
+                    placeholder="Type your message here..." v-model="newMessage" @keyup.enter="sendMessage">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage">Send</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div v-else>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="enter your username to join chat"
+                  v-model="username" @keyup.enter="joinChat">
+              </div>
+              <button class="btn btn-primary" @click="joinChat">JOIN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+  <script src="/public/js/app.js"></script>

@@ -8,6 +8,7 @@
       rel='stylesheet'
       href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'
     />
+    {{!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> --}}
     <link rel='stylesheet' href='/css/style.css' />
     <script defer src='https://friconix.com/cdn/friconix.js'> </script>
   </head>
@@ -33,32 +34,40 @@
       </div>
       <div class='navbar-menu'>
         <div class='navbar-start'>
-          <a class='navbar-item'>
+          <a href='/' class='navbar-item'>
             Main
           </a>
-          <a class='navbar-item'>
+          <a href='/profile' class='navbar-item'>
             Profile
           </a>
-          <a class='navbar-item'>
+          <a href='/forum' class='navbar-item'>
             Forum
           </a>
         </div>
       </div>
       <div class='navbar-end'>
-        <a class='navbar-item'>Login | Signup</a>
+        <div class='navbar-item'>
+          {{#if logged_in}}
+            <a id='logout' class='navbar-item'>
+              <strong>Log Out</strong>
+            </a>
+          {{else}}
+            <a href='/login' class='navbar-item'>Login | Signup</a>
+          {{/if}}
+        </div>
       </div>
+
     </nav>
-
-
-
 
     <main>
       <!-- Render the sub layout -->
       {{{body}}}
     </main>
-
-
-
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src='/js/logout.js'></script>
+    {{/if}}
+    <script src='/js/navburger.js'></script>
   </body>
 
 </html>

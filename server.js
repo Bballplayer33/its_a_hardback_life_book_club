@@ -1,9 +1,12 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const bodyParser = require('body-parser');
+const Pusher     = require('pusher');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -14,6 +17,16 @@ const PORT = process.env.PORT || 3001;
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
+//Create an instance of Pusher
+const pusher = new Pusher({
+  appId:     process.env.PUSHER_APP_ID,
+  key:       process.env.PUSHER_APP_KEY,
+  secret:    process.env.PUSHER_APP_SECRET,
+  cluster:   process.env.PUSHER_APP_CLUSTER,
+  encrypted: true
+});
+
+//Middleware
 const sess = {
   secret: 'Super secret secret',
   cookie: {},
@@ -23,6 +36,10 @@ const sess = {
     db: sequelize,
   }),
 };
+
+//Body parser middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(session(sess));
 

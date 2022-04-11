@@ -1,0 +1,27 @@
+[
+    {
+      "title": "Dr. Jekyll & Mr. Hyde",
+      "author": "Robert Louis Stevenson",
+      "user_id": 1
+    },
+    {
+      "title": "The Shining",
+      "author": "Stephen King",
+      "user_id": 2
+    },
+    {
+      "title": "Essentials of geology",
+      "author": "Frederick K. Lutgens",
+      "user_id": 3
+    },
+    {
+      "title": "Nature's second kingdom",
+      "author": "François Delaporte",
+      "user_id": 4
+    },
+    {
+      "title": "Fantastic Mr. Fox",
+      "author": "Roald Dahl",
+      "user_id": 5
+    }
+  ]

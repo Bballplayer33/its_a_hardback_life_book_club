@@ -13,22 +13,16 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
-<<<<<<< HEAD
     "body-parser": "^1.20.0",
-=======
-    "bulma-start": "^0.0.4",
->>>>>>> 1a0d64b1e5c873b475d9af0b28e6e62c116e54fa
     "connect-session-sequelize": "^7.0.4",
-    "dotenv": "^8.6.0",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "express-handlebars": "^5.2.0",
+    "express-handlebars": "^6.0.4",
     "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
     "mysql2": "^2.2.5",
-<<<<<<< HEAD
-    "pusher": "^5.0.1",
-=======
     "nodemon": "^2.0.15",
->>>>>>> 1a0d64b1e5c873b475d9af0b28e6e62c116e54fa
+    "pusher": "^5.0.1",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
