@@ -2,26 +2,31 @@
   {
     "name": "Alex",
     "email": "alex@hotmail.com",
-    "password": "password"
+    "password": "password",
+    "role": "admin"
   },
   {
     "name": "Kris",
     "email": "kris@hotmail.com",
-    "password": "password"
+    "password": "password",
+    "role": "admin"
   },
   {
     "name": "Amanda",
     "email": "amanda@hotmail.com",
-    "password": "password"
+    "password": "password",
+    "role": "admin"
   },
   {
     "name": "Chance",
     "email": "chance@hotmail.com",
-    "password": "password"
+    "password": "password",
+    "role": "admin"
   },
   {
     "name": "Earl",
     "email": "earl@hotmail.com",
-    "password": "password"
+    "password": "password",
+    "role": "admin"
   }
 ]

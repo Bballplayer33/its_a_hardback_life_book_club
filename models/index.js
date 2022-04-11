@@ -1,6 +1,7 @@
 const User = require('./User');
 const Review = require('./Review');
 const Book = require('./Book');
+const Role = require('./Role');
 
 User.hasMany(Review, {
   foreignKey: 'user_id',
@@ -31,5 +32,10 @@ Book.hasMany(Review, {
   foreignKey: 'book_id',
   onDelete: 'CASCADE',
 });
+
+// User.hasOne(Role, {
+//   foreignKey: 'user_id',
+//   as: 'role',
+// });
 
 module.exports = { User, Review, Book };
