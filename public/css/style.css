@@ -20,7 +20,7 @@ body {
 
 .hero {
   /* min-height: 100vh; */
-  background-color: #463f3a;
+  background-color: var(--navbarbackground);
   background-image: url('../assets/librarybackground.png');
   background-position: center center;
   background-repeat: no-repeat;
@@ -30,7 +30,7 @@ body {
 }
 
 form.box {
-  background-color: #bcb8b1;
+  background-color: var(--cardbackground);
   opacity: 0.8;
   padding: 6rem;
   margin: 10rem 15rem;
@@ -51,11 +51,18 @@ form.box {
 
 #custom-search {
   text-align: center;
+  background-color: #fff;
+  color: var(--darktext);
 }
 
 #search-page-box {
   min-width: 100vw;
   min-height: 100vh;
+  background-image: url('../assets/librarybackground.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 /* Photo by <a href="https://unsplash.com/@itfeelslikefilm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">🇸🇮 Janko Ferlič</a> on <a href="https://unsplash.com/s/photos/library?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
      */
