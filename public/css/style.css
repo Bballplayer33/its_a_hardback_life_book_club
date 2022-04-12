@@ -62,8 +62,12 @@ form.box {
      */
 
 /* Pusher Styling */
+#app {
+  padding-top: 20px;
+}
+
 .chat-body {
-  padding-top: 100px;
+  padding: 20px;
 }
 
 .chat {
