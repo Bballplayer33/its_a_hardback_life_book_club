@@ -52,7 +52,7 @@
           <a href='/forum' class='navbar-item'>
             Forum
           </a>
-          {{#if admin}}
+          {{#ifEquals user_role 'admin'}}
             <div class='navbar-item has-dropdown is-hoverable'>
               <a class='navbar-link has-text-white'>
                 Members
@@ -67,7 +67,7 @@
                 </a>
               </div>
             </div>
-          {{/if}}
+          {{/ifEquals}}
         </div>
       </div>
       <div class='navbar-end'>
@@ -87,14 +87,8 @@
     </nav>
 
     <main>
-<<<<<<< HEAD
-    <!-- Render the sub layout -->
-  </section>
-         {{{body}}}
-=======
       <!-- Render the sub layout -->
       {{{body}}}
->>>>>>> af4e2b41330df4d497a836417840fb2b6a593d34
     </main>
     <!-- Render script for logged in users only -->
     {{#if logged_in}}

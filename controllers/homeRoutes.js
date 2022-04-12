@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User, Book, Review } = require('../models');
-const { user } = require('../userData');
 const { withAuth, authRole } = require('../utils/auth');
 // Homepage
 router.get('/', async (req, res) => {
@@ -14,7 +13,9 @@ router.get('/', async (req, res) => {
 //Search; search page will render results from third party API
 router.get('/search', async (req, res) => {
   try {
-    res.render('search');
+    res.render('search', {
+      user_role: req.session.user_role,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -45,6 +46,7 @@ router.get('/profile', withAuth, async (req, res) => {
     res.render('profile', {
       ...user,
       logged_in: true,
+      user_role: req.session.user_role,
     });
   } catch (err) {
     res.status(500).json(err);
