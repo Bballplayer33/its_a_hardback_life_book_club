@@ -17,15 +17,6 @@ const PORT = process.env.PORT || 3001;
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
-//Create an instance of Pusher
-const pusher = new Pusher({
-  appId:     process.env.PUSHER_APP_ID,
-  key:       process.env.PUSHER_APP_KEY,
-  secret:    process.env.PUSHER_APP_SECRET,
-  cluster:   process.env.PUSHER_APP_CLUSTER,
-  encrypted: true
-});
-
 //Middleware
 const sess = {
   secret: 'Super secret secret',

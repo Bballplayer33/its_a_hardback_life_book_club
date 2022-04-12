@@ -1,9 +1,9 @@
-  <div class="container" class="chat-body" id="app">
+   <div class="container" class="chat-body" id="app">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-info">
           <div class="panel-heading">
-            Group Chats <span class="badge">{{ members.count }}</span>
+            Group Chats <span class="badge">\{{ members.count }}</span>
           </div>
           <div class="panel-body">
             <div v-if="joined">
@@ -13,11 +13,11 @@
                   <div class="chat-body clearfix">
                     <div class="header">
                       <strong class="primary-font">
-                        {{ message.username }}
+                        \{{ message.username }}
                       </strong>
                     </div>
                     <p>
-                      {{ message.message }}
+                      \{{ message.message }}
                     </p>
                   </div>
                 </li>
@@ -44,7 +44,8 @@
       </div>
     </div>
   </div>
+
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
-  <script src="/public/js/app.js"></script>
+  <script src="../js/app.js"></script>
