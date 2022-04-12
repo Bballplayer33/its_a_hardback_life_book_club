@@ -16,6 +16,11 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    role: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: 'basic',
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,

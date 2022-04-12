@@ -7,4 +7,18 @@ const withAuth = (req, res, next) => {
   }
 };
 
-module.exports = withAuth;
+function authRole(role) {
+  return (req, res, next) => {
+    console.log(req.session);
+    if (req.session.user_role != role) {
+      res.status(401);
+      return res.send('Access not allowed');
+    }
+    next();
+  };
+}
+
+module.exports = {
+  withAuth,
+  authRole,
+};

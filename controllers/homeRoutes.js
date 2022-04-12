@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Book, Review } = require('../models');
-const withAuth = require('../utils/auth');
+const { withAuth, authRole } = require('../utils/auth');
 const Pusher     = require('pusher');
 require('dotenv').config();
 
@@ -84,6 +84,18 @@ router.get('/profile', withAuth, async (req, res) => {
     res.render('profile', {
       ...user,
       logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/admin', withAuth, authRole('admin'), async (req, res) => {
+  try {
+    res.render('admin', {
+      ...user,
+      logged_in: true,
+      user_role: 'admin',
     });
   } catch (err) {
     res.status(500).json(err);

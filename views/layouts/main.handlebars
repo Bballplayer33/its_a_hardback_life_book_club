@@ -14,7 +14,6 @@
       rel='stylesheet'
       href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'
     />
-    {{!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> --}}
     <link rel='stylesheet' href='/css/style.css' />
     <script defer src='https://friconix.com/cdn/friconix.js'> </script>
   </head>
@@ -53,6 +52,22 @@
           <a href='/forum' class='navbar-item'>
             Forum
           </a>
+          {{#if admin}}
+            <div class='navbar-item has-dropdown is-hoverable'>
+              <a class='navbar-link has-text-white'>
+                Members
+              </a>
+
+              <div class='navbar-dropdown is-size-4'>
+                <a class='navbar-item'>
+                  View/Edit Members
+                </a>
+                <a class='navbar-item'>
+                  Invite New Member
+                </a>
+              </div>
+            </div>
+          {{/if}}
         </div>
       </div>
       <div class='navbar-end'>
