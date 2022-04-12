@@ -3,7 +3,7 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-info">
           <div class="panel-heading">
-            Group Chats <span class="badge">\{{ members.count }}</span>
+            Group Chats <span class="icon-text">&nbsp;&nbsp;|&nbsp;&nbsp;Current Members:&nbsp;\{{ members.count }}</span>
           </div>
           <div class="panel-body">
             <div v-if="joined">
@@ -26,8 +26,8 @@
                 <div class="input-group">
                   <input id="btn-input" type="text" name="message" class="form-control input-sm"
                     placeholder="Type your message here..." v-model="newMessage" @keyup.enter="sendMessage">
-                  <span class="input-group-btn">
-                    <button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage">Send</button>
+                  <span class="btn-primary">
+                    <button id="btn-chat" @click="sendMessage">Send</button>
                   </span>
                 </div>
               </div>
@@ -37,7 +37,8 @@
                 <input type="text" class="form-control" placeholder="enter your username to join chat"
                   v-model="username" @keyup.enter="joinChat">
               </div>
-              <button class="btn btn-primary" @click="joinChat">JOIN</button>
+              <div class="btn-primary">
+              <button @click="joinChat">JOIN</button>
             </div>
           </div>
         </div>

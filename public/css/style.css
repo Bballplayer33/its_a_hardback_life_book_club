@@ -94,6 +94,18 @@ form.box {
   color: #777777;
 }
 
+.input-group {
+  padding: 20px;
+}
+
+.form-group {
+  padding: 20px;
+}
+
+.btn-primary {
+  padding-left: 20px;
+}
+
 .panel-body {
   overflow-y: scroll;
   height: 350px;
