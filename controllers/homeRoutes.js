@@ -1,15 +1,15 @@
 const router = require('express').Router();
 const { User, Book, Review } = require('../models');
 const { withAuth, authRole } = require('../utils/auth');
-const Pusher     = require('pusher');
+const Pusher = require('pusher');
 require('dotenv').config();
 
 const pusher = new Pusher({
-  appId:     process.env.PUSHER_APP_ID,
-  key:       process.env.PUSHER_APP_KEY,
-  secret:    process.env.PUSHER_APP_SECRET,
-  cluster:   process.env.PUSHER_APP_CLUSTER,
-  encrypted: true
+  appId: process.env.PUSHER_APP_ID,
+  key: process.env.PUSHER_APP_KEY,
+  secret: process.env.PUSHER_APP_SECRET,
+  cluster: process.env.PUSHER_APP_CLUSTER,
+  encrypted: true,
 });
 
 // Homepage
@@ -40,34 +40,39 @@ router.get('/login', (req, res) => {
     return;
   }
 
-router.get('/forum', withAuth, (req, res) => {
-  res.render('pusher');
-});
+  router.get('/forum', withAuth, (req, res) => {
+    res.render('pusher');
+  });
 
-router.post('/join-chat', (req, res) => {
-  // store username in session
-  req.session.username = req.body.username;
-  res.json('Joined');
-});
+  router.post('/join-chat', (req, res) => {
+    // store username in session
+    req.session.username = req.body.username;
+    res.json('Joined');
+  });
 
-router.post('/pusher/auth', (req, res) => {
-  const socketId = req.body.socket_id;
-  const channel = req.body.channel_name;
-  // Retrieve username from session and use as presence channel user_id
-  const presenceData = {
-      user_id: req.session.username
-  };
-  const auth = pusher.authenticate(socketId, channel, presenceData);
-  res.send(auth);
-});
+  router.post('/pusher/auth', (req, res) => {
+    const socketId = req.body.socket_id;
+    const channel = req.body.channel_name;
+    // Retrieve username from session and use as presence channel user_id
+    const presenceData = {
+      user_id: req.session.username,
+    };
+    const auth = pusher.authenticate(socketId, channel, presenceData);
+    res.send(auth);
+  });
 
-router.post('/send-message', (req, res) => { 
-  pusher.trigger('presence-groupChat', 'message_sent', {
-      username: req.body.username,
-      message:  req.body.message,
-  }, (console.log(req.body.username)));
-  res.send('Message sent');
-});
+  router.post('/send-message', (req, res) => {
+    pusher.trigger(
+      'presence-groupChat',
+      'message_sent',
+      {
+        username: req.body.username,
+        message: req.body.message,
+      },
+      console.log(req.body.username)
+    );
+    res.send('Message sent');
+  });
 
   res.render('login');
 });
@@ -98,7 +103,7 @@ router.get('/admin', withAuth, authRole('admin'), async (req, res) => {
     res.render('admin', {
       ...user,
       logged_in: true,
-      user_role: 'admin',
+      // user_role: 'admin',
     });
   } catch (err) {
     res.status(500).json(err);
