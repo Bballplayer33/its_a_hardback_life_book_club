@@ -54,6 +54,10 @@ form.box {
   background-color: #fff;
   color: var(--darktext);
 }
+/* Review Cards */
+.card-content.custom-card {
+  padding: 0.25rem;
+}
 /* To edit the current book */
 #edit-book-div {
   display: none;

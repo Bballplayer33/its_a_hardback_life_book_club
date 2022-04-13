@@ -33,3 +33,23 @@ let save = document.getElementById('save-current-book-button');
 button.onclick = function () {
   input.classList.toggle('active');
 };
+
+const renderCurrentBook = async () => {
+  const response = await fetch('api/currentBook', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  if (response.ok) {
+    const currentBook = await response.json();
+    const data = currentBook[0];
+    const title = document.getElementById('current-title');
+    const author = document.getElementById('current-author');
+    title.innerHTML = data.title;
+    author.innerHTML = `by ${data.author}`;
+  } else {
+    console.log('error');
+  }
+};
+renderCurrentBook();

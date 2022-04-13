@@ -5,7 +5,7 @@ const { withAuth, authRole } = require('../../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const currentBook = await CurrentBook.findAll();
-
+    console.log(currentBook);
     res.status(200).json(currentBook);
   } catch (err) {
     res.status(500).json(err);

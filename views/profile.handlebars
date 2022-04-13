@@ -8,30 +8,39 @@
         <p class='panel-heading'>
           Currently Reading
         </p>
-
-        <a class='panel-block is-active'>
-
-          by:
-
-        </a>
-
-        {{#ifEquals user_role 'admin'}}
-          <div><button id='edit-book-button'>edit</button></div>
-          <div id='edit-book-div'><form class='edit-book-form'><input
-                type='text'
-                value='{{title}}'
-                id='edit-title'
-              /><input type='text' value='{{author}}' id='edit-author' /><button
-                id='save-current-book-button'
-              >save</button></form></div>
-        {{/ifEquals}}
+        <div class='box has-text-centered'>
+          <p id='current-title' class='is-size-4'>Matilda</p>
+          <p id='current-author'>Roald Dahl</p>
+          {{#ifEquals user_role 'admin'}}
+            <div><button
+                id='edit-book-button'
+                class='button mt-4'
+              >edit</button></div>
+            <div id='edit-book-div'><form class='edit-book-form mt-4'><input
+                  class='input mb-4'
+                  type='text'
+                  value='{{title}}'
+                  id='edit-title'
+                  placeholder='Title'
+                /><input
+                  class='input mb-4'
+                  type='text'
+                  value='{{author}}'
+                  id='edit-author'
+                  placeholder='Author'
+                /><button
+                  id='save-current-book-button'
+                  class='button'
+                >save</button></form></div>
+          {{/ifEquals}}
+        </div>
       </div>
       {{! Add a Review  }}
       <div class='panel custom-search'>
         <p class='panel-heading'>
           Add A Review
         </p>
-        <form>
+        <form class='new-review-form'>
           <div class='has-text-centered box'>
             <div class='field has-text-centered'>
               <label class='label'>Stars: </label>
@@ -56,6 +65,7 @@
               <div class='control'>
                 <textarea
                   class='textarea'
+                  id='review-content'
                   placeholder='Input Review Here'
                   rows='5'
                 ></textarea>
@@ -99,7 +109,8 @@
           Books I've Reviewed
         </p>
         {{#unless reviews.length}}
-          <h3>You haven't reviewed anything yet.</h3>
+          <h3 class='is-size-5 has-text-weight-semibold p-2'>You haven't
+            reviewed anything yet.</h3>
         {{/unless}}
         {{#if reviews.length}}
           {{#each reviews as |review|}}
@@ -110,8 +121,8 @@
                   <i class='fi-xwsdxl-chevron-wide'></i>
                 </a>
               </header>
-              <div class='card-content is-hidden' data-allow-multiple='false'>
-                <div class='card-content'>
+              <div class='card-content is-hidden'>
+                <div class='card-content custom-card'>
                   {{review.content}}
                 </div>
               </div>
@@ -121,11 +132,7 @@
       </div>
     </div>
   </div>
-<<<<<<< Updated upstream
 </div>
-=======
-</div>
-
+{{! <script src='./js/profile.js'></script> }}
 <script src='./js/review.js'></script>
 <script src='./js/currentBook.js'></script>
->>>>>>> Stashed changes
