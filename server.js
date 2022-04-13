@@ -6,7 +6,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const bodyParser = require('body-parser');
-const Pusher     = require('pusher');
+const Pusher = require('pusher');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -16,6 +16,10 @@ const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
+// To check for admin
+hbs.handlebars.registerHelper('ifEquals', function (user_role, role, options) {
+  return user_role == role ? options.fn(this) : options.inverse(this);
+});
 
 //Middleware
 const sess = {
