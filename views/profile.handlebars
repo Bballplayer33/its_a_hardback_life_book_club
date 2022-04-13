@@ -140,7 +140,8 @@
           {{#each reviews as |review|}}
             <div class='card'>
               <header class='card-header'>
-                <p class='card-header-title'>{{review.title}}</p>
+                <p class='card-header-title'>{{review.title}}
+                  <span class=''></span></p>
                 <a class='card-header-icon card-toggle'>
                   <i class='fi-xwsdxl-chevron-wide'></i>
                 </a>
@@ -157,6 +158,6 @@
     </div>
   </div>
 </div>
-<script src='./js/profile.js'></script>
+{{! <script src='./js/profile.js'></script> }}
 <script src='./js/review.js'></script>
 <script src='./js/currentBook.js'></script>
