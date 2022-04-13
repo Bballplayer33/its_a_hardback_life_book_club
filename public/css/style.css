@@ -72,9 +72,6 @@ form.box {
   background-size: cover;
 }
 
-/* Photo by <a href="https://unsplash.com/@itfeelslikefilm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">🇸🇮 Janko Ferlič</a> on <a href="https://unsplash.com/s/photos/library?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-     */
-
 /* Pusher Styling */
 #app {
   padding-top: 20px;
@@ -82,6 +79,10 @@ form.box {
 
 .chat-body {
   padding: 20px;
+}
+
+.chat-text {
+  font-weight: bolder;
 }
 
 .chat {
@@ -99,6 +100,18 @@ form.box {
 .chat li .chat-body p {
   margin: 0;
   color: #777777;
+}
+
+.input-group {
+  padding: 20px;
+}
+
+.form-group {
+  padding: 20px;
+}
+
+.btn-primary {
+  padding-left: 20px;
 }
 
 .panel-body {
