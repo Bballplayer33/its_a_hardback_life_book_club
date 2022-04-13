@@ -48,11 +48,22 @@ form.box {
   color: var(--lighttext);
   background-color: var(--navbarbackground);
 }
-
-#custom-search {
+/* Profile Page  */
+.custom-search {
   text-align: center;
   background-color: #fff;
   color: var(--darktext);
+}
+/* Review Cards */
+.card-content.custom-card {
+  padding: 0.25rem;
+}
+/* To edit the current book */
+#edit-book-div {
+  display: none;
+}
+#edit-book-div.active {
+  display: block;
 }
 
 #search-page-box {
@@ -64,9 +75,6 @@ form.box {
   background-attachment: fixed;
   background-size: cover;
 }
-
-/* Photo by <a href="https://unsplash.com/@itfeelslikefilm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">🇸🇮 Janko Ferlič</a> on <a href="https://unsplash.com/s/photos/library?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-     */
 
 /* Pusher Styling */
 #app {
@@ -90,7 +98,7 @@ form.box {
 .chat li {
   margin-bottom: 10px;
   padding-bottom: 5px;
-  border-bottom: 1px dotted #B3A9A9;
+  border-bottom: 1px dotted #b3a9a9;
 }
 
 .chat li .chat-body p {
@@ -117,15 +125,15 @@ form.box {
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar {
   width: 12px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #555;
 }

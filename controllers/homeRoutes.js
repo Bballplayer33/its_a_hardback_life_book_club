@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Book, Review } = require('../models');
+const { User, Book, Review, CurrentBook } = require('../models');
 const { withAuth, authRole } = require('../utils/auth');
 const Pusher = require('pusher');
 require('dotenv').config();
@@ -82,8 +82,15 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      // will need book data displayed on profile page
-      include: [{ model: Book }],
+      // will need book and review data displayed on profile page
+      include: [
+        { model: Review, attributes: ['title', 'content'] },
+        {
+          model: Book,
+          attributes: ['title', 'author', 'id'],
+          include: [{ model: CurrentBook, attributes: ['title', 'author'] }],
+        },
+      ],
     });
 
     const user = userData.get({ plain: true });
@@ -103,7 +110,7 @@ router.get('/admin', withAuth, authRole('admin'), async (req, res) => {
     res.render('admin', {
       ...user,
       logged_in: true,
-      // user_role: 'admin',
+
     });
   } catch (err) {
     res.status(500).json(err);

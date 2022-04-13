@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 // /api/books/
-// must be logged in to add review
+// must be logged in to add book
 router.post('/', withAuth, async (req, res) => {
   try {
     const newBook = await Book.create({
