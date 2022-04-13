@@ -77,6 +77,10 @@ form.box {
   padding: 20px;
 }
 
+.chat-text {
+  font-weight: bolder;
+}
+
 .chat {
   list-style: none;
   margin: 0;
@@ -92,6 +96,18 @@ form.box {
 .chat li .chat-body p {
   margin: 0;
   color: #777777;
+}
+
+.input-group {
+  padding: 20px;
+}
+
+.form-group {
+  padding: 20px;
+}
+
+.btn-primary {
+  padding-left: 20px;
 }
 
 .panel-body {

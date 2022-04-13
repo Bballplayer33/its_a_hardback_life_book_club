@@ -1,5 +1,4 @@
-// public/app.js
-//const Pusher     = require('pusher');
+//Chat box feature using Pusher
 
 const pusher = new Pusher('b2ffc19f607b5757415d', {
     cluster: 'us2',
