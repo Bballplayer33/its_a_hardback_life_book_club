@@ -110,6 +110,7 @@ router.get('/admin', withAuth, authRole('admin'), async (req, res) => {
     res.render('admin', {
       ...user,
       logged_in: true,
+
     });
   } catch (err) {
     res.status(500).json(err);
