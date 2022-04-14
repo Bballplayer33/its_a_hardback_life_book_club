@@ -141,9 +141,10 @@
             <div class='card'>
               <header class='card-header'>
                 <p class='card-header-title'>{{review.title}}
-                  <span class='starRating has-text-right'>{{#times
-                      review.rating
-                    }}
+                  <span
+                    style='width:100%'
+                    class='starRating has-text-right'
+                  >{{#times review.rating}}
                       <i style='color: gold' class='fi-xnsuxl-star-solid'></i>
                     {{/times}}</span></p>
                 <a class='card-header-icon card-toggle'>

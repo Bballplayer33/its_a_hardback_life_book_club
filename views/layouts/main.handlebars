@@ -53,20 +53,9 @@
             Forum
           </a>
           {{#ifEquals user_role 'admin'}}
-            <div class='navbar-item has-dropdown is-hoverable'>
-              <a class='navbar-link has-text-white'>
-                Members
-              </a>
-
-              <div class='navbar-dropdown is-size-4'>
-                <a class='navbar-item'>
-                  View/Edit Members
-                </a>
-                <a class='navbar-item'>
-                  Invite New Member
-                </a>
-              </div>
-            </div>
+           <a href='/admin' class='navbar-item'>
+            Members
+          </a>
           {{/ifEquals}}
         </div>
       </div>
