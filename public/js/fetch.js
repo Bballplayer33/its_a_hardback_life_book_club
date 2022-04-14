@@ -2,6 +2,7 @@
 window.onload = () => {
     const getBooks = async (event) => {
         event.preventDefault();
+        document.getElementById('output').innerHTML = '';
         document.getElementById('output').innerHTML +=
         '<div class="panel" id="custom-search"><p class="panel-heading has-text-centered">Results</p></div>'
         const response = await
@@ -20,12 +21,11 @@ window.onload = () => {
 
                         if (typeof data.docs[i].isbn[0] !== undefined) {
                             document.getElementById('output').innerHTML +=
-                                '<br><img src="http://covers.openlibrary.org/b/isbn/' +
+                                '<br><img class="opacity" src="http://covers.openlibrary.org/b/isbn/' +
                                 data.docs[i + 1].isbn[0] + '-M.jpg"><br></div>'
                         };
-                    }
+                    } 
                 });
     }
     document.getElementById("bookName").addEventListener("click", getBooks);
-    document.getElementById('output').innerHTML = '';
 }
