@@ -20,7 +20,7 @@
 
   <body>
     <nav
-      class='navbar is-size-4 is-fixed-top'
+      class='navbar is-size-4'
       role='navigation'
       aria-label='main navigation'
     >
@@ -53,9 +53,9 @@
             Forum
           </a>
           {{#ifEquals user_role 'admin'}}
-           <a href='/admin' class='navbar-item'>
-            Members
-          </a>
+            <a href='/admin' class='navbar-item'>
+              Members
+            </a>
           {{/ifEquals}}
         </div>
       </div>
@@ -82,5 +82,5 @@
     {{/if}}
     <script src='/js/navburger.js'></script>
   </body>
-<script src='/js/fetch.js'></script>
+  <script src='/js/fetch.js'></script>
 </html>
