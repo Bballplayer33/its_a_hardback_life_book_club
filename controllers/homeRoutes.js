@@ -92,7 +92,7 @@ router.get('/profile', withAuth, async (req, res) => {
         { model: Review, attributes: ['rating', 'title', 'content'] },
         {
           model: Book,
-          attributes: ['title', 'author', 'id'],
+          attributes: ['title', 'author', 'link', 'id'],
           include: [{ model: CurrentBook, attributes: ['title', 'author'] }],
         },
       ],
