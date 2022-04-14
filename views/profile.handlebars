@@ -106,24 +106,25 @@
         <p class='panel-heading'>
           Saved Books
         </p>
-        <a class='panel-block is-active'>
-          <span class='panel-icon'>
-            <i class='fas fa-book' aria-hidden='true'></i>
-          </span>
-          Saved Book 1
-        </a>
-        <a class='panel-block'>
-          <span class='panel-icon'>
-            <i class='fas fa-book' aria-hidden='true'></i>
-          </span>
-          Saved Book 2
-        </a>
-        <a class='panel-block'>
-          <span class='panel-icon'>
-            <i class='fas fa-book' aria-hidden='true'></i>
-          </span>
-          Saved Book 3
-        </a>
+        {{#unless books.length}}
+          <h3 class='is-size-5 has-text-weight-semibold p-2'>You haven't saved
+            anything yet.</h3>
+        {{/unless}}
+        {{#each books as |book|}}
+          <div class='card'>
+            <header class='card-header'>
+              <p class='card-header-title'>{{book.title}} by {{book.author}}</p>
+              <a class='card-header-icon card-toggle'>
+                <i class='fi-xwsdxl-chevron-wide'></i>
+              </a>
+            </header>
+            <div class='card-content is-hidden'>
+              <div class='card-content custom-card'>
+                <a href='{{book.link}}' target='_blank'>Check Availability</a>
+              </div>
+            </div>
+          </div>
+        {{/each}}
       </div>
     </div>
     {{! Reviewed books }}
@@ -163,6 +164,5 @@
     </div>
   </div>
 </div>
-{{! <script src='./js/profile.js'></script> }}
 <script src='./js/review.js'></script>
 <script src='./js/currentBook.js'></script>
