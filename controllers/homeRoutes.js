@@ -15,22 +15,25 @@ const pusher = new Pusher({
 // Homepage
 router.get('/', async (req, res) => {
   try {
-    res.render('homepage');
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-//Search; search page will render results from third party API
-router.get('/search', async (req, res) => {
-  try {
-    res.render('search', {
+    res.render('homepage', {
+      logged_in: req.session.logged_in,
       user_role: req.session.user_role,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+//Search; search page will render results from third party API
+// router.get('/search', async (req, res) => {
+//   try {
+//     res.render('search', {
+//       user_role: req.session.user_role,
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 //get login page
 router.get('/login', (req, res) => {
@@ -41,7 +44,9 @@ router.get('/login', (req, res) => {
   }
 
   router.get('/forum', withAuth, (req, res) => {
-    res.render('pusher');
+    res.render('pusher', {
+      logged_in: true,
+    });
   });
 
   router.post('/join-chat', (req, res) => {
@@ -112,10 +117,15 @@ router.get('/admin', async (req, res) => {
       attributes: { exclude: ['password'] },
     });
     //console.log(userData);
-    console.log('Lookey here!!', userData.dataValues);
-    //const users = await userData.get({ plain: true });
 
-    res.render('admin');
+    // const users = await userData.get({ plain: true });
+    const users = userData.map((item) => item.get({ plain: true }));
+    console.log('Lookey here!!', userData.dataValues);
+    res.render('admin', {
+      users,
+      logged_in: req.session.logged_in,
+      user_roles: req.session.user_role,
+    });
   } catch (err) {
     res.status(500).json(err);
     return;
