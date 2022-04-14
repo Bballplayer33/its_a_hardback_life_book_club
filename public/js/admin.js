@@ -39,7 +39,7 @@ const editButtonHandler = async (event) => {
       },
     });
     if (response.ok) {
-      document.location.replace(`/members`);
+      document.location.replace(`/admin`);
     } else {
       alert('Failed to update user.');
     }
