@@ -6,7 +6,7 @@ window.onload = () => {
         document.getElementById('output').innerHTML +=
         '<div class="panel" id="custom-search"><p class="panel-heading has-text-centered">Results</p></div>'
         const response = await
-            fetch('http://openlibrary.org/search.json?q=' +
+            fetch('https://openlibrary.org/search.json?q=' +
                 document.getElementById('input').value)
                 .then(a => a.json())
                 .then(data => {
@@ -17,11 +17,11 @@ window.onload = () => {
                             data.docs[i].title +
                             '</p> &nbsp | &nbsp <p> Author: ' +
                             data.docs[i].author_name[0] +
-                            '</p> &nbsp | &nbsp <a href="https://openlibrary.org/' + data.docs[i].seed[0] + '">' + data.docs[i].title + ' by ' +  data.docs[i].author_name[0] + '</a>'
+                            '</p> &nbsp | &nbsp <a href="https://openlibrary.org/' + data.docs[i].seed[0] + '" target="_blank">' + data.docs[i].title + ' by ' +  data.docs[i].author_name[0] + '</a>'
 
                         if (typeof data.docs[i].isbn[0] !== undefined) {
                             document.getElementById('output').innerHTML +=
-                                '<br><img class="opacity" src="http://covers.openlibrary.org/b/isbn/' +
+                                '<br><img class="opacity" src="https://covers.openlibrary.org/b/isbn/' +
                                 data.docs[i + 1].isbn[0] + '-M.jpg"><br></div>'
                         };
                     } 
