@@ -1,21 +1,31 @@
-//Fetch data from OpenLibrary API and render to search.handlebars
-function getBooks() {
+// //Fetch data from OpenLibrary API and render to search.handlebars & main.handlebars
+window.onload = () => {
+    const getBooks = async (event) => {
+        event.preventDefault();
+        document.getElementById('output').innerHTML +=
+        '<div class="panel" id="custom-search"><p class="panel-heading has-text-centered">Results</p></div>'
+        const response = await
+            fetch('http://openlibrary.org/search.json?q=' +
+                document.getElementById('input').value)
+                .then(a => a.json())
+                .then(data => {
+                    console.log(data);
+                    for (var i = 0; i < 10; i++) {
+                        document.getElementById('output').innerHTML +=
+                            '<div class="panel-block" aria-hidden="true"> <p> Title: ' +
+                            data.docs[i].title +
+                            '</p> &nbsp | &nbsp <p> Author: ' +
+                            data.docs[i].author_name[0] +
+                            '</p> &nbsp | &nbsp <a href="https://openlibrary.org/' + data.docs[i].seed[0] + '">' + data.docs[i].title + ' by ' +  data.docs[i].author_name[0] + '</a>'
+
+                        if (typeof data.docs[i].isbn[0] !== undefined) {
+                            document.getElementById('output').innerHTML +=
+                                '<br><img src="http://covers.openlibrary.org/b/isbn/' +
+                                data.docs[i + 1].isbn[0] + '-M.jpg"><br></div>'
+                        };
+                    }
+                });
+    }
+    document.getElementById("bookName").addEventListener("click", getBooks);
     document.getElementById('output').innerHTML = '';
-    console.log("Search clicked");
-    fetch('http://openlibrary.org/search.json?q=' + 
-    document.getElementById('input').value)
-    .then(a=>a.json())
-    .then(response=>{
-        for (var i=0; i<response.docs.length; i++){
-            document.getElementById('output').innerHTML += 
-            '<h2>'+ 
-            response.docssearch[i].title + 
-            '</h2>' + 
-            response.docs[i].author_name[0] + 
-            '<br><img src="http://covers.openlibrary.org/b/isbn/' +
-            response.docs[i].isbn[0] +
-            'M-jpg"><br>';
-        }
-    });
-  }
-  
+}

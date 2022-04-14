@@ -5,6 +5,24 @@
   --cardbackground: #bcb8b1;
   --lighttext: #f4f3ee;
 }
+
+.title {
+  font-size: 30px;
+  color: var(--lighttext);
+}
+
+.search-results {
+  color: var(--darktext);
+  text-align: center;
+  font-weight: bolder;
+  font-size: 17px;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   font-family: 'Italiana', serif;
 }
@@ -90,6 +108,11 @@ form.box {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+.search-results {
+  color: var(--lighttext);
+  text-align: center;
 }
 
 /* Pusher Styling */

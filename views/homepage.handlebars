@@ -3,25 +3,12 @@
     <div class='container'>
       <form class='box'>
         <div class='has-text-centered'>
-
           <div class='container'>
-            <h1 class='title'>
-              It's A Hardback Life...
-            </h1>
-            <p class='subtitle'>
-              for us!
+            <div class='panel-heading'>
+              <p class='title'>It's A Hardback Life . . . for Us!</p>
+              <p>
+              Search for your favorite books and authors:
             </p>
-          </div>
-          <div class='field has-text-centered'>
-            <label class='label'>Search by: </label>
-            <div class='control is-expanded"'>
-              <div class='select custom-select'>
-                <select class='custom-select'>
-                  <option>Subject</option>
-                  <option>Author</option>
-                  <option>Title</option>
-                </select>
-              </div>
             </div>
           </div>
           <div class='field has-text-centered'>
@@ -35,9 +22,16 @@
             </div>
           </div>
 
-          <button onclick='getBooks()' class='button mt-6'>Search</button>
-        </div></form>
-      <div id='output'></div>
+           <button id="bookName" class='button mt-6'>Search</button>
+           <br><br>
+        </div>
+       <div id='results'></div>
+            <div id='output' class='search-results'></div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
+</div>
 </section>
+<script src='/js/fetch.js'></script>
