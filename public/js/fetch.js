@@ -17,7 +17,7 @@ window.onload = () => {
                             data.docs[i].title +
                             '</p> &nbsp | &nbsp <p> Author: ' +
                             data.docs[i].author_name[0] +
-                            '</p> &nbsp | &nbsp <a href="https://openlibrary.org/' + data.docs[i].seed[0] + '" target="_blank">' + data.docs[i].title + ' by ' +  data.docs[i].author_name[0] + '</a>'
+                            '</p> &nbsp | &nbsp <a href="https://openlibrary.org/' + data.docs[i].seed[0] + '" target="_blank"> OpenLibrary </a>'
 
                         if (typeof data.docs[i].isbn[0] !== undefined) {
                             document.getElementById('output').innerHTML +=
