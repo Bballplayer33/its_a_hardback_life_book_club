@@ -1,9 +1,8 @@
-
 <div class='container box' id='search-page-box'>
   <div
     class='columns is-flex is-justify-content-space-evenly has-text-weight-semibold'
   >
-  {{! Club Members }}
+    {{! Club Members }}
     <div class='column is-12'>
       <div class='panel custom-search'>
         <p class='panel-heading'>
@@ -22,15 +21,27 @@
                   <i class='fi-xwsdxl-chevron-wide'></i>
                 </a>
               </header>
-              <div class='card-content is-hidden'>
-                <div class='card-content custom-card'>
-                  {{user.email}}
-                  {{user.id}}
-                  {{user.role}}
+              <div class='card-content is-hidden'><div
+                  class='card-content custom-card'
+                ><div class='user-wrapper'>
+                    {{user.email}}
+                    <br />
+                    {{user.role}}</div><div class='button-wrapper'>
+                    {{! buttons }}
+                    <a href='/edit/{{id}}' data-id='{{post.id}}'><button
+                        class='button is-info is-medium'
+                      >Edit</button>
+                    </a>
+                    <button
+                      data-id={{post.id}}
+                      class='button is-danger is-medium destroy'
+                    >Delete</button>
+                  </div>
+
                 </div>
               </div>
             </div>
           {{/each}}
         {{/if}}
-    </div>
-</div>
+      </div></div>
+  </div></div>
