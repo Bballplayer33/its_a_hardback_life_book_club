@@ -21,6 +21,10 @@ Book.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    link: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

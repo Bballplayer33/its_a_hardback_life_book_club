@@ -1,3 +1,4 @@
+// Star rating
 let radioInputs = document.getElementsByClassName('star-radio');
 
 let selected = 0;
@@ -19,7 +20,7 @@ for (let idx = 0; idx < radioInputs.length; idx++) {
     }
   };
 }
-
+// user input
 const newFormHandler = async (event) => {
   event.preventDefault();
   const rating = document.querySelector('input[name="star"]:checked').value;

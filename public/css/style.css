@@ -22,6 +22,12 @@
   font-size: 17px;
 }
 
+.button.is-ghost.is-hovered,
+.button.is-ghost:hover {
+  color: #363636;
+  text-decoration: none;
+}
+
 .centered {
   display: flex;
   justify-content: center;
