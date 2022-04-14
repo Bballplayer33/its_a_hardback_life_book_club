@@ -28,12 +28,12 @@
                     <br />
                     {{user.role}}</div><div class='button-wrapper'>
                     {{! buttons }}
-                    <a href='/edit/{{id}}' data-id='{{post.id}}'><button
+                    <a href='/edit/{{id}}' data-id='{{user.id}}'><button
                         class='button is-info is-medium'
                       >Edit</button>
                     </a>
                     <button
-                      data-id={{post.id}}
+                      data-id={{user.id}}
                       class='button is-danger is-medium destroy'
                     >Delete</button>
                   </div>
@@ -45,3 +45,4 @@
         {{/if}}
       </div></div>
   </div></div>
+<script src='./js/admin.js'></script>
