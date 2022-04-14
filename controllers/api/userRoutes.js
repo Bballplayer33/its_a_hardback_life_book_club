@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { withAuth, authRole } = require('../../utils/auth');
 const { User } = require('../../models');
 // get /api/users
 router.get('/', async (req, res) => {
@@ -74,6 +75,26 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
+  }
+});
+
+//api/users/:id
+router.delete('/:id', withAuth, authRole('admin'), async (req, res) => {
+  try {
+    const userData = await User.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!userData) {
+      res.status(400).json({ message: 'Bad request! Something went wrong.' });
+      return;
+    }
+
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
