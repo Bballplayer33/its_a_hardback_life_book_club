@@ -20,6 +20,12 @@ const hbs = exphbs.create({ helpers });
 hbs.handlebars.registerHelper('ifEquals', function (user_role, role, options) {
   return user_role == role ? options.fn(this) : options.inverse(this);
 });
+// for rendering star rating on saved reviews
+hbs.handlebars.registerHelper('times', function (n, block) {
+  var accum = '';
+  for (var i = 0; i < n; ++i) accum += block.fn(i);
+  return accum;
+});
 
 //Middleware
 const sess = {

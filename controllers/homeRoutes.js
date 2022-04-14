@@ -84,7 +84,7 @@ router.get('/profile', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       // will need book and review data displayed on profile page
       include: [
-        { model: Review, attributes: ['title', 'content'] },
+        { model: Review, attributes: ['rating', 'title', 'content'] },
         {
           model: Book,
           attributes: ['title', 'author', 'id'],
@@ -110,11 +110,12 @@ router.get('/admin', withAuth, authRole('admin'), async (req, res) => {
     res.render('admin', {
       ...user,
       logged_in: true,
-
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+// maybe res.json? then serialize
 
 module.exports = router;
