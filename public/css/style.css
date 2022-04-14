@@ -105,6 +105,7 @@ form.box {
 }
 
 #search-page-box {
+  padding-top: 5rem;
   min-width: 100vw;
   min-height: 100vh;
   background-image: url('../assets/librarybackground.png');
