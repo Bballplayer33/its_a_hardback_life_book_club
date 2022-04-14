@@ -1,11 +1,20 @@
-const saveSearch = async () => {
-  const searchTitle = document.querySelector('.search-title').value;
-  const searchAuthor = document.querySelector('.search-author').value;
-  const searchLink = document.querySelector('.search-link').value;
+const saveSearch = async (e) => {
+  const target = e.target;
+  const parent = target.parentNode;
+  const searchTitle = parent.querySelector('.search-title').textContent;
+  const searchAuthor = parent.querySelector('.search-author').textContent;
+  const searchLink = parent.querySelector('.search-link').getAttribute('href');
+  console.log(
+    `title: ${searchTitle}, author: ${searchAuthor}, link: ${searchLink}`
+  );
   if (searchTitle && searchAuthor && searchLink) {
     const response = await fetch(`/api/books`, {
       method: 'POST',
-      body: JSON.stringify({ searchTitle, searchAuthor, searchLink }),
+      body: JSON.stringify({
+        title: searchTitle,
+        author: searchAuthor,
+        link: searchLink,
+      }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -14,11 +23,8 @@ const saveSearch = async () => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
+      console.log(response);
       alert('Failed to create post');
     }
   }
 };
-
-document
-  .getElementsByClassName('search-btn')
-  .addEventListener('click', saveSearch);

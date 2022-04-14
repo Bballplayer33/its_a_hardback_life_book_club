@@ -13,18 +13,18 @@ window.onload = () => {
       .then((data) => {
         console.log(data);
         for (var i = 0; i < 10; i++) {
-          document.getElementById('output').innerHTML +=
-            '<div class="panel-block" aria-hidden="true"> <p class="search-title"> Title: ' +
-            data.docs[i].title +
-            '</p> &nbsp | &nbsp <p class="search-author"> Author: ' +
-            data.docs[i].author_name[0] +
-            '</p> &nbsp | &nbsp <a class="search-link" href="https://openlibrary.org/' +
-            data.docs[i].seed[0] +
-            '" target="_blank">' +
-            'Check Availability' +
-            '</a>' +
-            `&nbsp | &nbsp
-            <a class="button search-btn is-ghost">Save This Search<br>to Profile</a>`;
+          document.getElementById(
+            'output'
+          ).innerHTML += `<div class="panel-block" aria-hidden="true"> 
+                <p> Title: 
+                    <span class="search-title">${data.docs[i].title}</span>
+                </p> &nbsp | &nbsp 
+                <p> Author: 
+                    <span class="search-author">${data.docs[i].author_name[0]}</span>
+                </p> &nbsp | &nbsp 
+                <a class="search-link" href="https://openlibrary.org${data.docs[i].seed[0]}" target="_blank">Check Availability</a>
+                &nbsp | &nbsp
+                <a class="button search-btn is-ghost" onclick="saveSearch(event)">Save This Search<br>to Profile</a>`;
 
           if (typeof data.docs[i].isbn[0] !== undefined) {
             document.getElementById('output').innerHTML +=
