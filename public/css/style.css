@@ -11,6 +11,10 @@
   color: var(--lighttext);
 }
 
+.opacity {
+  opacity: 1;
+}
+
 .search-results {
   color: var(--darktext);
   text-align: center;
