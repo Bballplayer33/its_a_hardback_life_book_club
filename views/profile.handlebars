@@ -42,20 +42,44 @@
         </p>
         <form class='new-review-form'>
           <div class='has-text-centered box'>
-            <div class='field has-text-centered'>
-              <label class='label'>Stars: </label>
-              <div class='control is-expanded"'>
-                <div class='select custom-select'>
-                  <select class='custom-select'>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-              </div>
-            </div><input
+            <div class='stars-widget mb-5'>
+              <label><i class='fi-xnsuxl-star-solid'></i><input
+                  type='radio'
+                  class='star-radio'
+                  id='star-1'
+                  name='star'
+                  value='1'
+                /></label>
+              <label><i class='fi-xnsuxl-star-solid'></i><input
+                  type='radio'
+                  class='star-radio'
+                  id='star-2'
+                  name='star'
+                  value='2'
+                /></label>
+              <label><i class='fi-xnsuxl-star-solid'></i><input
+                  type='radio'
+                  class='star-radio'
+                  id='star-3'
+                  name='star'
+                  value='3'
+                /></label>
+              <label><i class='fi-xnsuxl-star-solid'></i><input
+                  type='radio'
+                  class='star-radio'
+                  id='star-4'
+                  name='star'
+                  value='4'
+                /></label>
+              <label><i class='fi-xnsuxl-star-solid'></i><input
+                  type='radio'
+                  class='star-radio'
+                  id='star-5'
+                  name='star'
+                  value='5'
+                /></label>
+            </div>
+            <input
               class='input'
               id='review-title'
               type='text'
@@ -116,7 +140,13 @@
           {{#each reviews as |review|}}
             <div class='card'>
               <header class='card-header'>
-                <p class='card-header-title'>{{review.title}}</p>
+                <p class='card-header-title'>{{review.title}}
+                  <span
+                    style='width:100%'
+                    class='starRating has-text-right'
+                  >{{#times review.rating}}
+                      <i style='color: gold' class='fi-xnsuxl-star-solid'></i>
+                    {{/times}}</span></p>
                 <a class='card-header-icon card-toggle'>
                   <i class='fi-xwsdxl-chevron-wide'></i>
                 </a>

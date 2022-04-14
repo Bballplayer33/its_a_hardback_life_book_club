@@ -84,7 +84,7 @@ router.get('/profile', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       // will need book and review data displayed on profile page
       include: [
-        { model: Review, attributes: ['title', 'content'] },
+        { model: Review, attributes: ['rating', 'title', 'content'] },
         {
           model: Book,
           attributes: ['title', 'author', 'id'],
@@ -105,24 +105,23 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-
 router.get('/admin', async (req, res) => {
-  console.log("Hit admin route");
+  console.log('Hit admin route');
   try {
-    const userData = await User.findAll( {
+    const userData = await User.findAll({
       attributes: { exclude: ['password'] },
     });
     //console.log(userData);
-    console.log("Lookey here!!", userData.dataValues);
+    console.log('Lookey here!!', userData.dataValues);
     //const users = await userData.get({ plain: true });
 
     res.render('admin');
-
   } catch (err) {
     res.status(500).json(err);
-    return
+    return;
   }
 });
 
+// maybe res.json? then serialize
 
 module.exports = router;

@@ -59,18 +59,15 @@
           {{/ifEquals}}
         </div>
       </div>
-      <div class='navbar-end'>
-        {{#if logged_in}}
-          <div class='navbar-item'>
+      <div class='navbar-end'><div class='navbar-item'>
+          {{#if logged_in}}
             <a id='logout' class='navbar-item'>
               <strong>Log Out</strong>
-            </a></div>
-        {{else}}
-          <div class='navbar-item'>
+            </a>
+          {{else}}
             <a href='/login' class='navbar-item'>Login | Signup</a>
-          </div>
-        {{/if}}
-
+          {{/if}}
+        </div>
       </div>
 
     </nav>
