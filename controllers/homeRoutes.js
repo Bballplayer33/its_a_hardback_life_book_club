@@ -105,16 +105,24 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-router.get('/admin', withAuth, authRole('admin'), async (req, res) => {
-  try {
-    res.render('admin', {
-      ...user,
-      logged_in: true,
 
+router.get('/admin', async (req, res) => {
+  console.log("Hit admin route");
+  try {
+    const userData = await User.findAll( {
+      attributes: { exclude: ['password'] },
     });
+    //console.log(userData);
+    console.log("Lookey here!!", userData.dataValues);
+    //const users = await userData.get({ plain: true });
+
+    res.render('admin');
+
   } catch (err) {
     res.status(500).json(err);
+    return
   }
 });
+
 
 module.exports = router;
