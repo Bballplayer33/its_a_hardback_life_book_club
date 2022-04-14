@@ -5,7 +5,6 @@ const { withAuth, authRole } = require('../../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const currentBook = await CurrentBook.findAll();
-    console.log(currentBook);
     res.status(200).json(currentBook);
   } catch (err) {
     res.status(500).json(err);
@@ -28,7 +27,6 @@ router.post('/', withAuth, authRole('admin'), async (req, res) => {
 
 // update /api/currentBook/:id
 router.put('/:id', withAuth, authRole('admin'), async (req, res) => {
-  console.log('put request called');
   try {
     const updateCurrentBook = await CurrentBook.update(
       {

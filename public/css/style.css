@@ -58,6 +58,22 @@ form.box {
 .card-content.custom-card {
   padding: 0.25rem;
 }
+
+/****** Style Star Rating Widget *****/
+.stars-widget {
+  color: grey;
+  font-size: 18px;
+}
+.stars-widget input {
+  display: none;
+}
+.stars-widget .checked {
+  color: gold;
+}
+.stars-widget label:hover {
+  color: gold;
+  cursor: pointer;
+}
 /* To edit the current book */
 #edit-book-div {
   display: none;
