@@ -35,5 +35,8 @@ window.onload = () => {
         }
       });
   };
-  document.getElementById('bookName').addEventListener('click', getBooks);
+  const bookName = document.getElementById('bookName');
+  if (bookName != null && bookName != undefined) {
+    bookName.addEventListener('click', getBooks);
+  }
 };

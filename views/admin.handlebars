@@ -30,13 +30,27 @@
                     Role:
                     {{user.role}}</div><div class='button-wrapper'>
                     {{! buttons }}
-                    <a href='/edit/{{id}}' data-id='{{user.id}}'><button
-                        class='button is-info is-medium'
-                      >Edit</button>
-                    </a>
+                    <div></div>
+                    <div><form class='edit-user-form mt-4'><input
+                          class='input mb-4 edit-name'
+                          type='text'
+                          placeholder='{{user.name}}'
+                        /><input
+                          class='input mb-4 edit-email'
+                          type='text'
+                          placeholder='{{user.email}}'
+                        /><input
+                          class='input mb-4 edit-role'
+                          type='text'
+                          placeholder='{{user.role}}'
+                        /><button
+                          onclick='editButtonHandler(event)'
+                          data-id={{user.id}}
+                          class='button is-info'
+                        >Update</button></form></div>
                     <button
                       data-id={{user.id}}
-                      class='button is-danger is-medium destroy'
+                      class='button is-danger destroy'
                     >Delete</button>
                   </div>
 

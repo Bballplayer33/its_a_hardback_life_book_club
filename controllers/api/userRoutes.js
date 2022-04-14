@@ -98,4 +98,27 @@ router.delete('/:id', withAuth, authRole('admin'), async (req, res) => {
   }
 });
 
+// update /api/users/:id
+router.put('/:id', withAuth, authRole('admin'), async (req, res) => {
+  console.log('put request called');
+  try {
+    const updateUser = await User.update(
+      {
+        name: req.body.name,
+        email: req.body.email,
+        role: req.body.role,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+
+    res.status(200).json(updateUser);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;
