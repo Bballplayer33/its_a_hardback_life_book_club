@@ -1,10 +1,10 @@
-<div class='container box' id='search-page-box'>
+<div class='container box page-box'>
   <div
     class='columns is-flex is-justify-content-space-evenly has-text-weight-semibold'
   >
     {{! Currently reading  }}
     <div class='column is-4'>
-      <div class='panel custom-search'>
+      <div class='panel'>
         <p class='panel-heading'>
           Currently Reading
         </p>
@@ -36,7 +36,7 @@
         </div>
       </div>
       {{! Add a Review  }}
-      <div class='panel custom-search'>
+      <div class='panel'>
         <p class='panel-heading'>
           Add A Review
         </p>
@@ -102,13 +102,13 @@
     </div>
     {{! Saved books  }}
     <div class='column is-4'>
-      <div class='panel custom-search'>
+      <div class='panel'>
         <p class='panel-heading'>
           Saved Books
         </p>
         {{#unless books.length}}
-          <h3 class='is-size-5 has-text-weight-semibold p-2'>You haven't saved
-            anything yet.</h3>
+          <h3 class='unless is-size-5 has-text-weight-semibold p-2'>You haven't
+            saved anything yet.</h3>
         {{/unless}}
         {{#each books as |book|}}
           <div class='card'>
@@ -140,7 +140,7 @@
           Books I've Reviewed
         </p>
         {{#unless reviews.length}}
-          <h3 class='is-size-5 has-text-weight-semibold p-2'>You haven't
+          <h3 class='unless is-size-5 has-text-weight-semibold p-2'>You haven't
             reviewed anything yet.</h3>
         {{/unless}}
         {{#if reviews.length}}

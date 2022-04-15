@@ -24,62 +24,51 @@ router.get('/', async (req, res) => {
   }
 });
 
-//Search; search page will render results from third party API
-// router.get('/search', async (req, res) => {
-//   try {
-//     res.render('search', {
-//       user_role: req.session.user_role,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 //get login page
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
+  } else {
+    res.render('login');
   }
+});
 
-  router.get('/forum', withAuth, (req, res) => {
-    res.render('pusher', {
-      logged_in: req.session.logged_in,
-    });
+router.get('/forum', withAuth, (req, res) => {
+  res.render('pusher', {
+    logged_in: req.session.logged_in,
   });
+});
 
-  router.post('/join-chat', (req, res) => {
-    // store username in session
-    req.session.username = req.body.username;
-    res.json('Joined');
-  });
+router.post('/join-chat', (req, res) => {
+  // store username in session
+  req.session.username = req.body.username;
+  res.json('Joined');
+});
 
-  router.post('/pusher/auth', (req, res) => {
-    const socketId = req.body.socket_id;
-    const channel = req.body.channel_name;
-    // Retrieve username from session and use as presence channel user_id
-    const presenceData = {
-      user_id: req.session.username,
-    };
-    const auth = pusher.authenticate(socketId, channel, presenceData);
-    res.send(auth);
-  });
+router.post('/pusher/auth', (req, res) => {
+  const socketId = req.body.socket_id;
+  const channel = req.body.channel_name;
+  // Retrieve username from session and use as presence channel user_id
+  const presenceData = {
+    user_id: req.session.username,
+  };
+  const auth = pusher.authenticate(socketId, channel, presenceData);
+  res.send(auth);
+});
 
-  router.post('/send-message', (req, res) => {
-    pusher.trigger(
-      'presence-groupChat',
-      'message_sent',
-      {
-        username: req.body.username,
-        message: req.body.message,
-      },
-      console.log(req.body.username)
-    );
-    res.send('Message sent');
-  });
-
-  res.render('login');
+router.post('/send-message', (req, res) => {
+  pusher.trigger(
+    'presence-groupChat',
+    'message_sent',
+    {
+      username: req.body.username,
+      message: req.body.message,
+    },
+    console.log(req.body.username)
+  );
+  res.send('Message sent');
 });
 // must be logged in to view profile
 router.get('/profile', withAuth, async (req, res) => {

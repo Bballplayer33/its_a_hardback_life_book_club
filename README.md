@@ -34,7 +34,7 @@ Admin Profile:<br>
 <img src="public/assets/figma6.png" alt="Page 6 of Application Wireframe" width="600"/>
 
 ## Usage
-Visit the [application here](www.deployedlinkhere.com).
+Visit the [application here](https://a-hardback-life.herokuapp.com/).
 
  The following animation shows the web application's appearance and functionality:
 
