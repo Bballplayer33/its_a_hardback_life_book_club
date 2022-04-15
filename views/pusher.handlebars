@@ -17,7 +17,7 @@
                         <div id="friends">
                           <div class="friend">
                               {{!-- Replace this with user image --}}
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" />
+                              {{!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" />
                                 <p>
                                   {{!-- Replace this with username --}}
                                   <strong>Earl</strong>
@@ -25,49 +25,44 @@
                                   <span><br>You late son...</span>
                                 </p>
                                 {{!-- Replace this with user status e.g.  status available --}}
-                                <div class="status available"></div>
+                                <div class="status available"></div> --}}
                             </div>
                             
                             <div class="friend">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/2_copy.jpg" />
+                              {{!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/2_copy.jpg" />
                                 <p>
                                   <strong>Tutor AJ</strong>
                                   <span><br>Brb Guys...</span>
                                 </p>
-                                <div class="status away"></div>
+                                <div class="status away"></div> --}}
                             </div>
                             
                             <div class="friend">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/3_copy.jpg" />
+                              {{!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/3_copy.jpg" />
                                 <p>
                                   <strong>Chance Supcoe</strong>
                                   <span> <br> I need to write my own book...</span>
                                 </p>
-                                <div class="status inactive"></div>
+                                <div class="status inactive"></div> --}}
                             </div>
                             
                             <div class="friend">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/4_copy.jpg" />
+                              {{!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/4_copy.jpg" />
                                 <p>
                                   <strong>Alex Harkins</strong>
                                   <span><br>I'm on chapter 9 now...</span>
                                 </p>
-                                <div class="status inactive"></div>
+                                <div class="status inactive"></div> --}}
                             </div>
                             
                             <div class="friend">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/5_copy.jpg" />
+                              {{!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/5_copy.jpg" />
                                 <p>
                                 <strong>Amanda Dulaney</strong>
                                   <span><br>This book is thrilling...</span>
                                 </p>
-                                <div class="status inactive"></div>
-                            </div>
-                            
-                            <div id="search">
-                              <input type="text" id="searchfield" value="Search contacts..." />
-                            </div>
-                            
+                                <div class="status inactive"></div> --}}
+                            </div>                                                      
                         </div>                
                         
                     </div>	
@@ -140,16 +135,6 @@
                     
                     </div>        
                 </div>	
-    
-
-              {{!-- <div class="searchBox">
-                <input class="searchInput"type="text" name="" placeholder="Search">
-                <button class="searchButton" href="#">
-                  <i class="material-icons">
-                      search
-                  </i>
-                </button>
-              </div> --}}
             </div>
           </div>
       </div>
@@ -183,63 +168,36 @@
 
               <div class="container">
                 <div class="container__item">
-                  <form class="form">
+                  <div class="form">
                     <input type="text" name="message" v-model="newMessage" @keyup.enter="sendMessage" 
                     class="form__field" placeholder="Type Your Message Here..." />
                     <button type="button" id="btn-chat" @click="sendMessage" class="btn btn--primary btn--inside uppercase">Send</button>
-                  </form>
+                  </div>
                 </div>
                 
                 <div class="container__item container__item--bottom">
                   <p>Inspired by <a href="//dribbble.com/shots/2989456-Email-input-field" target="_blank">Daniel Luca</a>.</p>
                 </div>
               </div>
-
-              {{!-- <div class="panel-footer">
-                <div class="input-group">
-                  <input id="btn-input" type="text" name="message" class="form-control input-sm"
-                    placeholder="Type your message here..." v-model="newMessage" @keyup.enter="sendMessage">
-                  <span class="btn-primary">
-                    <button id="btn-chat" @click="sendMessage">Send</button>
-                  </span>
-                </div>
-              </div> --}}
             </div>
         
             <div v-else>
               {{!-- NEW --}}
               <div class="container">
                 <div class="container__item">
-                  <form class="form">
+                  <div class="form">
                     <input type="text" v-model="username" @keyup.enter="joinChat" v-model="newMessage" @keyup.enter="sendMessage" 
                     class="form__field form-control" placeholder="Enter your username to join chat" />
                     <button type="button" @click="joinChat" id="btn-chat" class="btn btn--primary btn--inside uppercase">JOIN</button>
-                  </form>
+                  </div>
                 </div>
                 
                 <div class="container__item container__item--bottom">
                   <p>Inspired by <a href="//dribbble.com/shots/2989456-Email-input-field" target="_blank">Daniel Luca</a>.</p>
                 </div>
               </div>
-              {{!-- OLD --}}
-              {{!-- <div class="form-group">
-                <input type="text" class="form-control" placeholder="enter your username to join chat"
-                  v-model="username" @keyup.enter="joinChat">
-              </div>
-              <div class="btn-primary">
-              <button @click="joinChat">JOIN</button>
-            </div> --}}
-          
-          
           </div>
-
-
         </div>
       </div>
     </div>
   </div>
-
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-  <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
-  <script src="../js/app.js"></script>
