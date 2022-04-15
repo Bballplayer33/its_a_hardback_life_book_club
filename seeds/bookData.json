@@ -2,26 +2,31 @@
   {
     "title": "Dr. Jekyll & Mr. Hyde",
     "author": "Robert Louis Stevenson",
+    "link": "https://openlibrary.org/works/OL9217923W/Dr_Jeckyll_and_Mr_Hyde_by_Robert_Louis_Stevenson",
     "user_id": 1
   },
   {
     "title": "The Shining",
     "author": "Stephen King",
+    "link": "https://openlibrary.org/works/OL81633W/The_Shining?edition=ia%3Ashining0000king_w4g5",
     "user_id": 2
   },
   {
     "title": "Essentials of geology",
     "author": "Frederick K. Lutgens",
+    "link": "https://openlibrary.org/works/OL21451673W/Essentials_of_geology?edition=ia%3Aessentialsofgeol00lutg_0",
     "user_id": 3
   },
   {
     "title": "Nature's second kingdom",
     "author": "François Delaporte",
+    "link": "https://openlibrary.org/works/OL9238490W/Nature%27s_Second_Kingdom",
     "user_id": 4
   },
   {
     "title": "Fantastic Mr. Fox",
     "author": "Roald Dahl",
+    "link": "https://openlibrary.org/works/OL45883W/Fantastic_Mr._Fox?edition=ia%3Afantasticmrfox0000dahl_p7c2",
     "user_id": 5
   }
 ]

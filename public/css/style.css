@@ -22,6 +22,12 @@
   font-size: 17px;
 }
 
+.button.is-ghost.is-hovered,
+.button.is-ghost:hover {
+  color: #363636;
+  text-decoration: none;
+}
+
 .centered {
   display: flex;
   justify-content: center;
@@ -80,6 +86,22 @@ form.box {
 .card-content.custom-card {
   padding: 0.25rem;
 }
+
+/****** Style Star Rating Widget *****/
+.stars-widget {
+  color: grey;
+  font-size: 18px;
+}
+.stars-widget input {
+  display: none;
+}
+.stars-widget .checked {
+  color: gold;
+}
+.stars-widget label:hover {
+  color: gold;
+  cursor: pointer;
+}
 /* To edit the current book */
 #edit-book-div {
   display: none;
@@ -89,6 +111,7 @@ form.box {
 }
 
 #search-page-box {
+  padding-top: 5rem;
   min-width: 100vw;
   min-height: 100vh;
   background-image: url('../assets/librarybackground.png');

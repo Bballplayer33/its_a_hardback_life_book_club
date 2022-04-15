@@ -1,25 +1,30 @@
 [
   {
+    "rating": 5,
     "title": "Dr. Jekyll & Mr. Hyde",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer auctor, odio non luctus porttitor, ex elit semper ipsum, a rutrum turpis purus at leo.",
     "book_id": 1
   },
   {
+    "rating": 4,
     "title": "The Shining",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer auctor, odio non luctus porttitor, ex elit semper ipsum, a rutrum turpis purus at leo.",
     "book_id": 4
   },
   {
+    "rating": 2,
     "title": "Essentials of geology",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer auctor, odio non luctus porttitor, ex elit semper ipsum, a rutrum turpis purus at leo.",
     "book_id": 5
   },
   {
+    "rating": 3,
     "title": "Nature's second kingdom",
     "content": "Proin ac arcu sagittis elit vulputate feugiat et sollicitudin justo.",
     "book_id": 3
   },
   {
+    "rating": 5,
     "title": "Fantastic Mr. Fox",
     "content": "Proin ac arcu sagittis elit vulputate feugiat et sollicitudin justo.",
     "book_id": 2
