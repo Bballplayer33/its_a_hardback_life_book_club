@@ -26,7 +26,7 @@ router.post('/', withAuth, authRole('admin'), async (req, res) => {
 });
 
 // update /api/currentBook/:id
-router.put('/:id', withAuth, authRole('admin'), async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const updateCurrentBook = await CurrentBook.update(
       {
