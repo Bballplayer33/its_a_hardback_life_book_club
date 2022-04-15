@@ -39,7 +39,9 @@ router.get('/login', (req, res) => {
   }
 
 router.get('/forum', withAuth, (req, res) => {
+  console.log("routeHit")
   res.render('pusher');
+
 });
 
 router.post('/join-chat', (req, res) => {
