@@ -23,7 +23,8 @@
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.15",
     "pusher": "^5.0.1",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "serve": "^13.0.2"
   },
   "devDependencies": {
     "eslint": "^7.12.1",
