@@ -15,7 +15,7 @@ window.onload = () => {
         for (var i = 0; i < 10; i++) {
           document.getElementById(
             'output'
-          ).innerHTML += `<div class="panel-block" aria-hidden="true"> 
+          ).innerHTML += `<div class="panel-block is-flex is-flex-wrap is-justify-content-center" aria-hidden="true"> 
                 <p> Title: 
                     <span class="search-title">${data.docs[i].title}</span>
                 </p> &nbsp | &nbsp 

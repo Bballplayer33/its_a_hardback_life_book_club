@@ -1,245 +1,124 @@
-   <div class="container" class="chat-body" id="app">
-    <div class="row">
-   
-  
-      <div class="col-md-4 col-md-offset-3 is-pulled-left">
-        
-          <div class="panel panel-info row">
-            <div class="panel-heading">
-              Chats 
-            </div>
-            <div class="panel-body col">
-              <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<div class='container page-box' class='chat-body' id='app'>
+  <div class='row'>
+    <div class='col-md-4 col-md-offset-3 is-pulled-left'>
 
-              
-                <div id="chatbox">
-                  <div id="friendslist">  
-                        <div id="friends">
-                          <div class="friend">
-                              {{!-- Replace this with user image --}}
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" />
-                                <p>
-                                  {{!-- Replace this with username --}}
-                                  <strong>Earl</strong>
-                                  {{!-- Replace this with user email optional --}}
-                                  <span><br>You late son...</span>
-                                </p>
-                                {{!-- Replace this with user status e.g.  status available --}}
-                                <div class="status available"></div>
-                            </div>
-                            
-                            <div class="friend">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/2_copy.jpg" />
-                                <p>
-                                  <strong>Tutor AJ</strong>
-                                  <span><br>Brb Guys...</span>
-                                </p>
-                                <div class="status away"></div>
-                            </div>
-                            
-                            <div class="friend">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/3_copy.jpg" />
-                                <p>
-                                  <strong>Chance Supcoe</strong>
-                                  <span> <br> I need to write my own book...</span>
-                                </p>
-                                <div class="status inactive"></div>
-                            </div>
-                            
-                            <div class="friend">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/4_copy.jpg" />
-                                <p>
-                                  <strong>Alex Harkins</strong>
-                                  <span><br>I'm on chapter 9 now...</span>
-                                </p>
-                                <div class="status inactive"></div>
-                            </div>
-                            
-                            <div class="friend">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/5_copy.jpg" />
-                                <p>
-                                <strong>Amanda Dulaney</strong>
-                                  <span><br>This book is thrilling...</span>
-                                </p>
-                                <div class="status inactive"></div>
-                            </div>
-                            
-                            <div id="search">
-                              <input type="text" id="searchfield" value="Search contacts..." />
-                            </div>
-                            
-                        </div>                
-                        
-                    </div>	
-                    
-                    <div id="chatview" class="p1">    	
-                        <div id="profile">
+      <div class='panel panel-info row'>
+        <div class='panel-heading'>
+          <span class='icon-text'>Current Members</span>
+        </div>
+        <div class='panel-body col'>
 
-                            <div id="close">
-                                <div class="cy"></div>
-                                <div class="cx"></div>
-                            </div>
-                            
-                            <p>Miro Badev</p>
-                            <span>miro@badev@gmail.com</span>
-                        </div>
-                        <div id="chat-messages">
-                          <label>Thursday 02</label>
-                            
-                            <div class="message">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" />
-                                <div class="bubble">
-                                  Really cool stuff!
-                                    <div class="corner"></div>
-                                    <span>3 min</span>
-                                </div>
-                            </div>
-                            
-                            <div class="message right">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/2_copy.jpg" />
-                                <div class="bubble">
-                                  Can you share a link for the tutorial?
-                                    <div class="corner"></div>
-                                    <span>1 min</span>
-                                </div>
-                            </div>
-                            
-                            <div class="message">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" />
-                                <div class="bubble">
-                                  Yeah, hold on
-                                    <div class="corner"></div>
-                                    <span>Now</span>
-                                </div>
-                            </div>
-                            
-                            <div class="message right">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/2_copy.jpg" />
-                                <div class="bubble">
-                                  Can you share a link for the tutorial?
-                                    <div class="corner"></div>
-                                    <span>1 min</span>
-                                </div>
-                            </div>
-                            
-                            <div class="message">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/1_copy.jpg" />
-                                <div class="bubble">
-                                  Yeah, hold on
-                                    <div class="corner"></div>
-                                    <span>Now</span>
-                                </div>
-                            </div>
-                            
-                        </div>
-                      
-                        <div id="sendmessage">
-                          <input type="text" value="Send message..." />
-                            <button id="send"></button>
-                        </div>
-                    
-                    </div>        
-                </div>	
-    
-
-              {{!-- <div class="searchBox">
-                <input class="searchInput"type="text" name="" placeholder="Search">
-                <button class="searchButton" href="#">
-                  <i class="material-icons">
-                      search
-                  </i>
-                </button>
-              </div> --}}
+          <div id='chatbox'>
+            <div id='friendslist'>
+              <div id='friends'>
+                <div v-if='joined'>
+                  <div
+                    v-for='(value, key, index) in members'
+                    class='friend box friend is-flex is-align-items-center is-justify-content-center'
+                  >
+                    <h3 class='has-text-weight-semibold is-size-4'>\{{ key }}</h3>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
       </div>
+    </div>
 
-      <div class="col-md-8 col-md-offset-3 is-pulled-right">
-        
-        <div class="panel panel-info row">
-        
-          <div class="panel-heading">
-            Group Chats <span class="icon-text">&nbsp;&nbsp;|&nbsp;&nbsp;Current Members:&nbsp;\{{ members.count }}</span>
-          </div>
-          <div class="panel-body col">
-            <div v-if="joined">
-              <em><span v-text="status"></span></em>
-              <ul class="chat">
-                <li class="left clearfix" v-for="message in messages">
-                  <div class="chat-body clearfix">
-                    <div class="header">
-                      <p class="primary-font message-username">
-                        \{{ message.username }} 
-                      </p>
-                    </div>
-                    <div class="mine messages">
-                      <div class="message">
-                        \{{ message.message }}
-                      </div>
+    <div class='col-md-8 col-md-offset-3 is-pulled-right'>
+
+      <div class='panel panel-info row'>
+
+        <div class='panel-heading'>
+          Group Chat
+        </div>
+        <div class='panel-body col'>
+          <div v-if='joined'>
+            <em><span v-text='status'></span></em>
+            <ul class='chat box'>
+              <li class='left clearfix' v-for='message in messages'>
+                <div class='chat-body clearfix'>
+                  <div class='header'>
+                    <p
+                      class='primary-font message-username has-text-weight-semibold is-size-4'
+                    >
+                      \{{ message.username }}
+                    </p>
+                  </div>
+                  <div class='mine messages has-text-weight-semibold is-size-4'>
+                    <div class='message'>
+                      \{{ message.message }}
                     </div>
                   </div>
-                </li>
-              </ul>
-
-              <div class="container">
-                <div class="container__item">
-                  <form class="form">
-                    <input type="text" name="message" v-model="newMessage" @keyup.enter="sendMessage" 
-                    class="form__field" placeholder="Type Your Message Here..." />
-                    <button type="button" id="btn-chat" @click="sendMessage" class="btn btn--primary btn--inside uppercase">Send</button>
-                  </form>
                 </div>
-                
-                <div class="container__item container__item--bottom">
-                  <p>Inspired by <a href="//dribbble.com/shots/2989456-Email-input-field" target="_blank">Daniel Luca</a>.</p>
+              </li>
+            </ul>
+
+            <div class='container box'>
+              <div class='container__item'>
+                <div class='form'>
+                  <input
+                    type='text'
+                    name='message'
+                    v-model='newMessage'
+                    @keyup.enter='sendMessage'
+                    class='form__field is-flex-justify-content-end'
+                    placeholder='Type Your Message Here...'
+                  />
+                  <button
+                    type='button'
+                    id='btn-chat'
+                    @click='sendMessage'
+                    class='btn btn--primary btn--inside uppercase'
+                  >Send</button>
                 </div>
               </div>
 
-              {{!-- <div class="panel-footer">
-                <div class="input-group">
-                  <input id="btn-input" type="text" name="message" class="form-control input-sm"
-                    placeholder="Type your message here..." v-model="newMessage" @keyup.enter="sendMessage">
-                  <span class="btn-primary">
-                    <button id="btn-chat" @click="sendMessage">Send</button>
-                  </span>
-                </div>
-              </div> --}}
+              <div class='container__item container__item--bottom'>
+                <p>Inspired by
+                  <a
+                    href='//dribbble.com/shots/2989456-Email-input-field'
+                    target='_blank'
+                  >Daniel Luca</a>.</p>
+              </div>
             </div>
-        
-            <div v-else>
-              {{!-- NEW --}}
-              <div class="container">
-                <div class="container__item">
-                  <form class="form">
-                    <input type="text" v-model="username" @keyup.enter="joinChat" v-model="newMessage" @keyup.enter="sendMessage" 
-                    class="form__field form-control" placeholder="Enter your username to join chat" />
-                    <button type="button" @click="joinChat" id="btn-chat" class="btn btn--primary btn--inside uppercase">JOIN</button>
-                  </form>
-                </div>
-                
-                <div class="container__item container__item--bottom">
-                  <p>Inspired by <a href="//dribbble.com/shots/2989456-Email-input-field" target="_blank">Daniel Luca</a>.</p>
-                </div>
-              </div>
-              {{!-- OLD --}}
-              {{!-- <div class="form-group">
-                <input type="text" class="form-control" placeholder="enter your username to join chat"
-                  v-model="username" @keyup.enter="joinChat">
-              </div>
-              <div class="btn-primary">
-              <button @click="joinChat">JOIN</button>
-            </div> --}}
-          
-          
           </div>
 
+          <div v-else>
+            {{! NEW }}
+            <div class='container'>
+              <div class='container__item'>
+                <div class='form'>
+                  <input
+                    type='text'
+                    v-model='username'
+                    @keyup.enter='joinChat'
+                    v-model='newMessage'
+                    @keyup.enter='sendMessage'
+                    class='form__field form-control'
+                    placeholder='Enter your username to join chat'
+                  />
+                  <button
+                    type='button'
+                    @click='joinChat'
+                    id='btn-chat'
+                    class='btn btn--primary btn--inside uppercase'
+                  >JOIN</button>
+                </div>
+              </div>
 
+              <div class='container__item container__item--bottom'>
+                <p>Inspired by
+                  <a
+                    href='//dribbble.com/shots/2989456-Email-input-field'
+                    target='_blank'
+                  >Daniel Luca</a>.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-  <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
-  <script src="../js/app.js"></script>
+</div>
