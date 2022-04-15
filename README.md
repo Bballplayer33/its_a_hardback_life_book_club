@@ -46,7 +46,7 @@ SO THAT I can share information with my community about books we love.
 
 
 ## Roles/Tasks
-- Alex : Backend Development
+- Alex : Backend Development / Frontend Development
 - Amanda : Backend Development / Frontend Development
 - Chance : Frontend Development
 - Earl : Backend Development
@@ -55,21 +55,21 @@ SO THAT I can share information with my community about books we love.
 
 ## Strengths and Challenges
 - Challenges:
-    GitHub Merge Conflicts
-    Vue.js Issues Pushing to Heroku
+    - GitHub Merge Conflicts
+    - Vue.js Issues Pushing to Heroku
 
-- Strength: 
-    Teamwork
-    Communication
-    API Integration
+- Strengths: 
+    - Teamwork
+    - Communication
+    - API Integration
 
 ## Future Directions
-UI Enhancements
-CSS Polishing
-Added Admin Functions
-Realtime On/Offline Chat Feature
-Profile Pictures
-Review Edit Feature
+- UI Enhancements
+- CSS Polishing
+- Added Admin Functions
+- Realtime On/Offline Chat Feature
+- Profile Pictures
+- Review Edit Feature
 
 ## Credits
 A thanks to our resources:
@@ -85,5 +85,6 @@ A thanks to our resources:
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [Expandable Cards Codepin](https://codepen.io/brussell98/pen/mEwxjP)
 - [Unsplash Photo by 🇸🇮 Janko Ferlič](https://unsplash.com/@itfeelslikefilm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
 ## License
 ![MIT License](https://img.shields.io/badge/license-MIT-green)
