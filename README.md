@@ -6,7 +6,6 @@ It's A Hardback Life Book Club is a book club application that has client and ad
 - [Wireframe](#wireframe)
 - [Usage](#usage)
 - [User Story](#user-story)
-- [Acceptance Criteria](#acceptance-criteria)
 - [Strengths and Challenges](#strengths-and-challenges)
 - [Future Directions](#future-directions)
 - [Credits](#credits)
@@ -36,9 +35,6 @@ Admin Profile:<br>
 ## Usage
 Visit the [application here](https://a-hardback-life.herokuapp.com/).
 
- The following animation shows the web application's appearance and functionality:
-
-![GIF of Completed Application](assets/hardback-life-demo.gif)
 
 ## User Story
 
@@ -48,36 +44,32 @@ I WANT to discuss books with other readers and leave reviews
 SO THAT I can share information with my community about books we love.
 ```
 
-## Acceptance Criteria
-
-```
-GIVEN crowdsourced reviews of popular books,
-WHEN I navigate to the homepage,
-THEN I can register as a user of the book club,
-THEN I am presented with a randomized selection of suggested books,
-WHEN I create an account,
-THEN I can save books I plan to read and write reviews of my favorite books,
-THEN I can chat with other book club members in real-time,
-THEN I can see a schedule of book club events,
-WHEN I make inappropriate comments,
-THEN an admin can remove my comment and block me as a user.
-```
 
 ## Roles/Tasks
-- Alex: 
-- Amanda: 
-- Kris S.: 
-- Chance: 
-- Earl:
+- Alex : Backend Development
+- Amanda : Backend Development / Frontend Development
+- Chance : Frontend Development
+- Earl : Backend Development
+- Kris : Frontend Development
 
-- Team effort: 
 
 ## Strengths and Challenges
-- Challenge: 
+- Challenges:
+    GitHub Merge Conflicts
+    Vue.js Issues Pushing to Heroku
+
 - Strength: 
+    Teamwork
+    Communication
+    API Integration
 
 ## Future Directions
-- 
+UI Enhancements
+CSS Polishing
+Added Admin Functions
+Realtime On/Offline Chat Feature
+Profile Pictures
+Review Edit Feature
 
 ## Credits
 A thanks to our resources:
