@@ -1,4 +1,4 @@
-<div class='container' class='chat-body' id='app'>
+<div class='container page-box' class='chat-body' id='app'>
   <div class='row'>
     <div class='col-md-4 col-md-offset-3 is-pulled-left'>
 
@@ -12,8 +12,11 @@
             <div id='friendslist'>
               <div id='friends'>
                 <div v-if='joined'>
-                  <div v-for='(value, key, index) in members' class='friend'>
-                    <h3>\{{ key }}</h3>
+                  <div
+                    v-for='(value, key, index) in members'
+                    class='friend box friend is-flex is-align-items-center is-justify-content-center'
+                  >
+                    <h3 class='has-text-weight-semibold is-size-4'>\{{ key }}</h3>
                   </div>
                 </div>
               </div>
@@ -29,20 +32,21 @@
 
         <div class='panel-heading'>
           Group Chat
-
         </div>
         <div class='panel-body col'>
           <div v-if='joined'>
             <em><span v-text='status'></span></em>
-            <ul class='chat'>
+            <ul class='chat box'>
               <li class='left clearfix' v-for='message in messages'>
                 <div class='chat-body clearfix'>
                   <div class='header'>
-                    <p class='primary-font message-username'>
+                    <p
+                      class='primary-font message-username has-text-weight-semibold is-size-4'
+                    >
                       \{{ message.username }}
                     </p>
                   </div>
-                  <div class='mine messages'>
+                  <div class='mine messages has-text-weight-semibold is-size-4'>
                     <div class='message'>
                       \{{ message.message }}
                     </div>
@@ -51,7 +55,7 @@
               </li>
             </ul>
 
-            <div class='container'>
+            <div class='container box'>
               <div class='container__item'>
                 <div class='form'>
                   <input
@@ -59,7 +63,7 @@
                     name='message'
                     v-model='newMessage'
                     @keyup.enter='sendMessage'
-                    class='form__field'
+                    class='form__field is-flex-justify-content-end'
                     placeholder='Type Your Message Here...'
                   />
                   <button

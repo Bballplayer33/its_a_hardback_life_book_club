@@ -24,17 +24,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-//Search; search page will render results from third party API
-// router.get('/search', async (req, res) => {
-//   try {
-//     res.render('search', {
-//       user_role: req.session.user_role,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 //get login page
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -81,8 +70,6 @@ router.post('/send-message', (req, res) => {
   );
   res.send('Message sent');
 });
-
-//res.render('login');
 // must be logged in to view profile
 router.get('/profile', withAuth, async (req, res) => {
   try {

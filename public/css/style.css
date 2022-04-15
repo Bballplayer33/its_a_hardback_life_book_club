@@ -2,17 +2,15 @@
   --darktext: #2c2b32;
   --navbarbackground: #463f3a;
   --mainbackground: #8a817c;
-  --cardbackground: #bcb8b1;
+  --cardbackground: rgba(188, 184, 177, 0.9);
   --lighttext: #f4f3ee;
 }
-
+*{
+    font-weight: 600;
+}
 .title {
   font-size: 30px;
   color: var(--lighttext);
-}
-
-.opacity {
-  opacity: 1;
 }
 
 .search-results {
@@ -57,11 +55,14 @@ body {
   background-color: #999;
 }
 
-form.box {
-  background-color: var(--cardbackground);
-  opacity: 0.8;
+.form.box {
   padding: 6rem;
   margin: 10rem 15rem;
+}
+.unless, 
+.card, 
+.box {
+	background-color: var(--cardbackground);
 }
 
 .custom-select {
@@ -77,11 +78,11 @@ form.box {
   background-color: var(--navbarbackground);
 }
 /* Profile Page  */
-.custom-search {
+/* .custom-search {
   text-align: center;
   background-color: #fff;
   color: var(--darktext);
-}
+} */
 /* Review Cards */
 .card-content.custom-card {
   padding: 0.25rem;
@@ -110,7 +111,7 @@ form.box {
   display: block;
 }
 
-#search-page-box {
+.page-box {
   padding-top: 5rem;
   min-width: 100vw;
   min-height: 100vh;

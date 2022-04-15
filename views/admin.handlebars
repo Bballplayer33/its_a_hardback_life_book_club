@@ -1,16 +1,17 @@
-<div class='container box' id='search-page-box'>
+<div class='container box page-box'>
   <div
     class='columns is-flex is-justify-content-space-evenly has-text-weight-semibold'
   >
     {{! Club Members }}
-    <div class='column is-12'>
+    <div class='column is-8'>
       <div class='panel custom-search'>
         <p class='panel-heading'>
           Club Members
         </p>
 
         {{#unless users.length}}
-          <h3 class='is-size-5 has-text-weight-semibold p-2'>No Users Currently</h3>
+          <h3 class='unless is-size-5 has-text-weight-semibold p-2'>No Users
+            Currently</h3>
         {{/unless}}
         {{#if users.length}}
           {{#each users as |user|}}
