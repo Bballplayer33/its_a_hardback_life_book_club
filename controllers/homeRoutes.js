@@ -89,7 +89,7 @@ router.get('/profile', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       // will need book and review data displayed on profile page
       include: [
-        { model: Review, attributes: ['rating', 'title', 'content'] },
+        { model: Review, attributes: ['id', 'rating', 'title', 'content'] },
         {
           model: Book,
           attributes: ['title', 'author', 'link', 'id'],
