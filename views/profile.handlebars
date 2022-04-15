@@ -119,8 +119,14 @@
               </a>
             </header>
             <div class='card-content is-hidden'>
-              <div class='card-content custom-card'>
+              <div
+                class='card-content is-flex is-flex-direction-row is-align-items-center is-justify-content-space-evenly custom-card'
+              >
                 <a href='{{book.link}}' target='_blank'>Check Availability</a>
+                <button
+                  class='button is-danger kill'
+                  onclick='killButtonHandler({{book.id}})'
+                >Delete</button>
               </div>
             </div>
           </div>
@@ -153,8 +159,14 @@
                 </a>
               </header>
               <div class='card-content is-hidden'>
-                <div class='card-content custom-card'>
-                  {{review.content}}
+                <div
+                  class='card-content is-flex is-flex-direction-row is-align-items-center is-justify-content-space-evenly custom-card'
+                >
+                  <div class='content-wrapper'>{{review.content}}</div>
+                  <footer><button
+                      class='button is-danger destroy'
+                      onclick='delButtonHandler({{review.id}})'
+                    >Delete</button></footer>
                 </div>
               </div>
             </div>
@@ -166,3 +178,4 @@
 </div>
 <script src='./js/review.js'></script>
 <script src='./js/currentBook.js'></script>
+<script src='./js/book.js'></script>

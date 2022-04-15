@@ -58,3 +58,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// delete review
+const delButtonHandler = async (id) => {
+  console.log(`user ID: ${id}`);
+
+  const response = await fetch(`/api/reviews/${id}`, {
+    method: 'DELETE',
+  });
+
+  if (response.ok) {
+    document.location.replace('/profile');
+  } else {
+    alert('Failed to delete review');
+  }
+};
