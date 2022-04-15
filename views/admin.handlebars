@@ -1,9 +1,8 @@
-
 <div class='container box' id='search-page-box'>
   <div
     class='columns is-flex is-justify-content-space-evenly has-text-weight-semibold'
   >
-  {{! Club Members }}
+    {{! Club Members }}
     <div class='column is-12'>
       <div class='panel custom-search'>
         <p class='panel-heading'>
@@ -22,16 +21,44 @@
                   <i class='fi-xwsdxl-chevron-wide'></i>
                 </a>
               </header>
-              <div class='card-content is-hidden'>
-                <div class='card-content custom-card'>
-                  Email: {{user.email}}
-                     <br>
-                 Role: {{user.role}}
+              <div class='card-content is-hidden'><div
+                  class='card-content custom-card'
+                ><div class='user-wrapper'>
+                    Email:
+                    {{user.email}}
+                    <br />
+                    Role:
+                    {{user.role}}</div><div class='button-wrapper'>
+                    {{! buttons }}
+                    <div></div>
+                    <div><form class='edit-user-form mt-4'><input
+                          class='input mb-4 edit-name'
+                          type='text'
+                          placeholder='{{user.name}}'
+                        /><input
+                          class='input mb-4 edit-email'
+                          type='text'
+                          placeholder='{{user.email}}'
+                        /><input
+                          class='input mb-4 edit-role'
+                          type='text'
+                          placeholder='{{user.role}}'
+                        /><button
+                          onclick='editButtonHandler(event)'
+                          data-id={{user.id}}
+                          class='button is-info'
+                        >Update</button></form></div>
+                    <button
+                      data-id={{user.id}}
+                      class='button is-danger destroy'
+                    >Delete</button>
+                  </div>
+
                 </div>
               </div>
             </div>
           {{/each}}
         {{/if}}
-    </div>
-</div>
-<script src="./js/admin.js"></script>
+      </div></div>
+  </div></div>
+<script src='./js/admin.js'></script>
