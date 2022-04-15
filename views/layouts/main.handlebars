@@ -26,8 +26,8 @@
     >
       <div class='navbar-brand'>
         <span class='navbar-item'>
-          It's A Hardback Life &nbsp; &nbsp;
-          <i class='fi-xnluxl-open-book'></i>
+          It's A Hardback Life
+          <i class='fi-xnluxl-open-book pl-4'></i>
         </span>
         <a
           role='button'
@@ -52,36 +52,22 @@
           <a href='/forum' class='navbar-item'>
             Forum
           </a>
-          {{#if admin}}
-            <div class='navbar-item has-dropdown is-hoverable'>
-              <a class='navbar-link has-text-white'>
-                Members
-              </a>
-
-              <div class='navbar-dropdown is-size-4'>
-                <a class='navbar-item'>
-                  View/Edit Members
-                </a>
-                <a class='navbar-item'>
-                  Invite New Member
-                </a>
-              </div>
-            </div>
-          {{/if}}
+          {{#ifEquals user_role 'admin'}}
+            <a href='/admin' class='navbar-item'>
+              Members
+            </a>
+          {{/ifEquals}}
         </div>
       </div>
-      <div class='navbar-end'>
-        {{#if logged_in}}
-          <div class='navbar-item'>
+      <div class='navbar-end'><div class='navbar-item'>
+          {{#if logged_in}}
             <a id='logout' class='navbar-item'>
               <strong>Log Out</strong>
-            </a></div>
-        {{else}}
-          <div class='navbar-item'>
+            </a>
+          {{else}}
             <a href='/login' class='navbar-item'>Login | Signup</a>
-          </div>
-        {{/if}}
-
+          {{/if}}
+        </div>
       </div>
 
     </nav>
@@ -96,5 +82,5 @@
     {{/if}}
     <script src='/js/navburger.js'></script>
   </body>
-
+  <script src='/js/fetch.js'></script>
 </html>

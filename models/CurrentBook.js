@@ -1,11 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// figure out how to star review. like code quiz?
+class CurrentBook extends Model {}
 
-class Review extends Model {}
-
-Review.init(
+CurrentBook.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,46 +11,30 @@ Review.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    rating: {
-      type: DataTypes.INTEGER,
-    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    content: {
+    author: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      defaultValue: 1,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
     book_id: {
       type: DataTypes.INTEGER,
-      //default value for testing
-      defaultValue: 1,
       references: {
         model: 'book',
         key: 'id',
       },
     },
   },
+
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'review',
+    modelName: 'currentBook',
   }
 );
-module.exports = Review;
+
+module.exports = CurrentBook;

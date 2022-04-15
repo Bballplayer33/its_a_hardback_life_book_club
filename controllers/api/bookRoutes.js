@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 // /api/books/
-// must be logged in to add review
+// must be logged in to add book
 router.post('/', withAuth, async (req, res) => {
   try {
     const newBook = await Book.create({
@@ -23,6 +23,7 @@ router.post('/', withAuth, async (req, res) => {
 
     res.status(200).json(newBook);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
