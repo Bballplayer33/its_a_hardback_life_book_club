@@ -4,6 +4,7 @@ It's A Hardback Life Book Club is a book club application that has client and ad
 
 ## Table of Contents
 - [Wireframe](#wireframe)
+- [Instructions](#instructions)
 - [Usage](#usage)
 - [User Story](#user-story)
 - [Strengths and Challenges](#strengths-and-challenges)
@@ -31,6 +32,14 @@ Search Results:<br>
 
 Admin Profile:<br>
 <img src="public/assets/figma6.png" alt="Page 6 of Application Wireframe" width="600"/>
+
+## Instructions
+
+To see admin functionality, log in with the following user information:
+- user email: admin@hotmail.com
+- password: password
+
+Otherwise, create a basic user account with our signup page.
 
 ## Usage
 Visit the [deployed application here](https://a-hardback-life.herokuapp.com/).
