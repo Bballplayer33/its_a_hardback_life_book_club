@@ -33,8 +33,10 @@ Admin Profile:<br>
 <img src="public/assets/figma6.png" alt="Page 6 of Application Wireframe" width="600"/>
 
 ## Usage
-Visit the [application here](https://a-hardback-life.herokuapp.com/).
+Visit the [deployed application here](https://a-hardback-life.herokuapp.com/).
 
+Check out the following demo of the application:<br>
+<img src="public/assets/hardback-demo.gif" alt="GIF Demo" width="600"/>
 
 ## User Story
 
@@ -46,11 +48,11 @@ SO THAT I can share information with my community about books we love.
 
 
 ## Roles/Tasks
-- Alex : Backend Development / Frontend Development
-- Amanda : Backend Development / Frontend Development
-- Chance : Frontend Development
-- Earl : Backend Development
-- Kris : Frontend Development
+- [Alex](https://github.com/amachkel) : Backend Development / Frontend Development
+- [Amanda](https://github.com/Quadrilateral0) : Backend Development / Frontend Development
+- [Chance](https://github.com/ChanceSupcoe) : Frontend Development
+- [Earl](https://github.com/Bballplayer33) : Backend Development
+- [Kris](https://github.com/DivorceSurvivor) : Frontend Development
 
 
 ## Strengths and Challenges
