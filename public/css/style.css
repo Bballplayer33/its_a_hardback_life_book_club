@@ -56,13 +56,16 @@ body {
 }
 
 .form.box {
-  padding: 6rem;
-  margin: 10rem 15rem;
+    padding: 6rem;
+    margin: auto;
 }
 .unless, 
 .card, 
 .box {
 	background-color: var(--cardbackground);
+}
+.wrapper p {
+    padding: 5px;
 }
 
 .custom-select {
