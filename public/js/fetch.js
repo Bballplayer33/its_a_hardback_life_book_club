@@ -15,22 +15,21 @@ window.onload = () => {
         for (var i = 0; i < 10; i++) {
           document.getElementById(
             'output'
-          ).innerHTML += `<div class="panel-block is-flex is-flex-wrap is-justify-content-center" aria-hidden="true"> 
+          ).innerHTML += `<div class="panel-block is-flex is-flex-wrap is-justify-content-center" aria-hidden="true"> <div class="wrapper">
                 <p> Title: 
                     <span class="search-title">${data.docs[i].title}</span>
-                </p> &nbsp | &nbsp 
+                </p>
                 <p> Author: 
                     <span class="search-author">${data.docs[i].author_name[0]}</span>
-                </p> &nbsp | &nbsp 
-                <a class="search-link" href="https://openlibrary.org${data.docs[i].seed[0]}" target="_blank">Check Availability</a>
-                &nbsp | &nbsp
-                <a class="button search-btn is-ghost" onclick="saveSearch(event)">Save This Search<br>to Profile</a>`;
+                </p>
+                <a class="button search-link" href="https://openlibrary.org${data.docs[i].seed[0]}" target="_blank">Check Availability</a>
+                <a class="button search-btn" onclick="saveSearch(event)">Save This Search</a>`;
 
           if (typeof data.docs[i].isbn[0] !== undefined) {
             document.getElementById('output').innerHTML +=
               '<br><img class="opacity" src="https://covers.openlibrary.org/b/isbn/' +
               data.docs[i + 1].isbn[0] +
-              '-M.jpg"><br></div>';
+              '-M.jpg"><br></div></div>';
           }
         }
       });

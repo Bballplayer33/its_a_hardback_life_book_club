@@ -1,22 +1,24 @@
 <div class='container page-box' class='chat-body' id='app'>
-  <div class='row'>
-    <div class='col-md-4 col-md-offset-3 is-pulled-left'>
+  <div class='col-wrapper m-4'>
+    <div class='columns'>
+      <div class='column is-one-quarter'>
 
-      <div class='panel panel-info row'>
-        <div class='panel-heading'>
-          <span class='icon-text'>Current Members</span>
-        </div>
-        <div class='panel-body col'>
+        <div class='panel'>
+          <div class='panel-heading'>
+            <span class='icon-text'>Current Members</span>
+          </div>
+          <div class='panel-body'>
 
-          <div id='chatbox'>
-            <div id='friendslist'>
-              <div id='friends'>
-                <div v-if='joined'>
-                  <div
-                    v-for='(value, key, index) in members'
-                    class='friend box friend is-flex is-align-items-center is-justify-content-center'
-                  >
-                    <h3 class='has-text-weight-semibold is-size-4'>\{{ key }}</h3>
+            <div id='chatbox'>
+              <div id='friendslist'>
+                <div id='friends'>
+                  <div v-if='joined'>
+                    <div
+                      v-for='(value, key, index) in members'
+                      class='friend box friend is-flex is-align-items-center is-justify-content-center'
+                    >
+                      <h3 class='has-text-weight-semibold is-size-4'>\{{ key }}</h3>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -24,96 +26,98 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class='col-md-8 col-md-offset-3 is-pulled-right'>
+      <div class='column'>
 
-      <div class='panel panel-info row'>
+        <div class='panel'>
 
-        <div class='panel-heading'>
-          Group Chat
-        </div>
-        <div class='panel-body col'>
-          <div v-if='joined'>
-            <em><span v-text='status'></span></em>
-            <ul class='chat box'>
-              <li class='left clearfix' v-for='message in messages'>
-                <div class='chat-body clearfix'>
-                  <div class='header'>
-                    <p
-                      class='primary-font message-username has-text-weight-semibold is-size-4'
+          <div class='panel-heading'>
+            Group Chat
+          </div>
+          <div class='panel-body'>
+            <div v-if='joined'>
+              <em><span v-text='status'></span></em>
+              <ul class='chat box' id='chat'>
+                <li class='left clearfix' v-for='message in messages'>
+                  <div class='chat-body clearfix'>
+                    <div class='header'>
+                      <p
+                        class='primary-font message-username has-text-weight-semibold is-size-4'
+                      >
+                        \{{ message.username }}
+                      </p>
+                    </div>
+                    <div
+                      class='mine messages has-text-weight-semibold is-size-4'
                     >
-                      \{{ message.username }}
-                    </p>
-                  </div>
-                  <div class='mine messages has-text-weight-semibold is-size-4'>
-                    <div class='message'>
-                      \{{ message.message }}
+                      <div class='message'>
+                        \{{ message.message }}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </li>
-            </ul>
+                </li>
+              </ul>
 
-            <div class='container box'>
-              <div class='container__item'>
-                <div class='form'>
-                  <input
-                    type='text'
-                    name='message'
-                    v-model='newMessage'
-                    @keyup.enter='sendMessage'
-                    class='form__field is-flex-justify-content-end'
-                    placeholder='Type Your Message Here...'
-                  />
-                  <button
-                    type='button'
-                    id='btn-chat'
-                    @click='sendMessage'
-                    class='btn btn--primary btn--inside uppercase'
-                  >Send</button>
+              <div class='container box'>
+                <div class='container__item'>
+                  <div class='form is-flex'>
+                    <input
+                      type='text'
+                      name='message'
+                      v-model='newMessage'
+                      @keyup.enter='sendMessage'
+                      class='form__field is-flex-justify-content-end'
+                      placeholder='Type Your Message Here...'
+                    />
+                    <button
+                      type='button'
+                      id='btn-chat'
+                      @click='sendMessage'
+                      class='btn btn--primary btn--inside uppercase'
+                    >Send</button>
+                  </div>
                 </div>
-              </div>
 
-              <div class='container__item container__item--bottom'>
-                <p>Inspired by
-                  <a
-                    href='//dribbble.com/shots/2989456-Email-input-field'
-                    target='_blank'
-                  >Daniel Luca</a>.</p>
+                <div class='container__item container__item--bottom'>
+                  <p>Inspired by
+                    <a
+                      href='//dribbble.com/shots/2989456-Email-input-field'
+                      target='_blank'
+                    >Daniel Luca</a>.</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div v-else>
-            {{! NEW }}
-            <div class='container'>
-              <div class='container__item'>
-                <div class='form'>
-                  <input
-                    type='text'
-                    v-model='username'
-                    @keyup.enter='joinChat'
-                    v-model='newMessage'
-                    @keyup.enter='sendMessage'
-                    class='form__field form-control'
-                    placeholder='Enter your username to join chat'
-                  />
-                  <button
-                    type='button'
-                    @click='joinChat'
-                    id='btn-chat'
-                    class='btn btn--primary btn--inside uppercase'
-                  >JOIN</button>
+            <div v-else>
+              {{! NEW }}
+              <div class='container'>
+                <div class='container__item'>
+                  <div class='form is-flex'>
+                    <input
+                      type='text'
+                      v-model='username'
+                      @keyup.enter='joinChat'
+                      v-model='newMessage'
+                      @keyup.enter='sendMessage'
+                      class='form__field form-control'
+                      placeholder='Enter your username to join chat'
+                    />
+                    <button
+                      type='button'
+                      @click='joinChat'
+                      id='btn-chat'
+                      class='btn btn--primary btn--inside uppercase'
+                    >JOIN</button>
+                  </div>
                 </div>
-              </div>
 
-              <div class='container__item container__item--bottom'>
-                <p>Inspired by
-                  <a
-                    href='//dribbble.com/shots/2989456-Email-input-field'
-                    target='_blank'
-                  >Daniel Luca</a>.</p>
+                <div class='container__item container__item--bottom'>
+                  <p>Inspired by
+                    <a
+                      href='//dribbble.com/shots/2989456-Email-input-field'
+                      target='_blank'
+                    >Daniel Luca</a>.</p>
+                </div>
               </div>
             </div>
           </div>
