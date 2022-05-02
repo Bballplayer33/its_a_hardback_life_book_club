@@ -37,7 +37,7 @@
           <div class='panel-body'>
             <div v-if='joined'>
               <em><span v-text='status'></span></em>
-              <ul class='chat box'>
+              <ul class='chat box' id='chat'>
                 <li class='left clearfix' v-for='message in messages'>
                   <div class='chat-body clearfix'>
                     <div class='header'>
@@ -60,7 +60,7 @@
 
               <div class='container box'>
                 <div class='container__item'>
-                  <div class='form'>
+                  <div class='form is-flex'>
                     <input
                       type='text'
                       name='message'
@@ -92,7 +92,7 @@
               {{! NEW }}
               <div class='container'>
                 <div class='container__item'>
-                  <div class='form'>
+                  <div class='form is-flex'>
                     <input
                       type='text'
                       v-model='username'
