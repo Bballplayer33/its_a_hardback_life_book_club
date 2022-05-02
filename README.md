@@ -35,9 +35,7 @@ Admin Profile:<br>
 
 ## Instructions
 
-To see admin functionality, log in with the following user information:
-- user email: admin@hotmail.com
-- password: password
+To see admin functionality, contact one of the creators.
 
 Otherwise, create a basic user account with our signup page.
 
